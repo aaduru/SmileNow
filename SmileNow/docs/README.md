@@ -1,10 +1,13 @@
-##SmileNow
+## SmileNow
 
-Heroku link
+[Heroku link][heroku]
 
-Trello link
+[Trello link][trello]
 
-##Minimum Viable Product
+[heroku]:
+[trello]: https://trello.com/smilenow1
+
+## Minimum Viable Product
 
 SmileNow is a web application inspired by Yelp(search engine for dental clinics) built using Ruby on Rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
@@ -17,12 +20,19 @@ SmileNow is a web application inspired by Yelp(search engine for dental clinics)
  Production README sample
 
 
-##Design Docs
-* [View Wireframes](docs/wireframes)
-* [React Components](docs/componen_hierarchy.md)
-* [API endpoints](docs/api-endpoint.md)
-* [DB schema](docs/schema.md)
-* [Sample State](docs/sample-state.md)
+ ## Design Docs
+ * [View Wireframes][wireframes]
+ * [React Components][components]
+ * [API endpoints][api-endpoints]
+ * [DB schema][schema]
+ * [Sample State][sample-state]
+
+ [wireframes]: docs/wireframes
+ [components]: docs/component-hierarchy.md
+ [sample-state]: docs/sample-state.md
+ [api-endpoints]: docs/api-endpoints.md
+ [schema]: docs/schema.md
+
 
 
 ##Implementation Timeline
