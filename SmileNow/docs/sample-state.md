@@ -1,7 +1,12 @@
 {
-  currentUser: {
-    id: 0,
-    username: "ujwala"
+  {
+    session: {
+      currentUser: {
+        id: 1,
+        username: 'breakfast'
+      },
+      errors: []
+    }
   },
   clinic: {
     1: {
