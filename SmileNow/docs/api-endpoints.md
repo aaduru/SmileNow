@@ -15,7 +15,6 @@
 
 ### Session
 
-<!-- - `GET /session/new` -->
 - `POST /session`
 - `DELETE /session`
 
