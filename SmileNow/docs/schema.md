@@ -17,7 +17,7 @@ profile_image     | string    |
   - has many `reviews`
   - has many `ratings` through `reviews`
   - has many `tags` through `taggings`
-  - has many `doctors`
+  <!-- - has many `doctors` -->
 
 column name     | data type | details
 ----------------|-----------|-----------------------
@@ -28,7 +28,7 @@ image_url       | string    |
 no_of_doctors   | integer   | not null
 address         | string    | not null
 --------------------------------------------------------
-## doctors
+<!-- ## doctors
 
   - belong to `business`
 
@@ -39,7 +39,7 @@ name            | string    | not null, indexed, unique
 description     | string    | not null, indexed, unique
 image_url       | string    |
 speciality      | string    | not null
----------------------------------------------------------
+--------------------------------------------------------- -->
 
 ## reviews
 
