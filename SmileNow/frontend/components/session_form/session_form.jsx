@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
 		super(props);
 		this.state = { username: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.guestLogin = this.guestLogin.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -22,6 +23,7 @@ class SessionForm extends React.Component {
 		return e => this.setState({
 			[field]: e.currentTarget.value
 		});
+
 	}
 
 	handleSubmit(e) {
@@ -32,7 +34,10 @@ class SessionForm extends React.Component {
 
 	guestLogin(e){
 		e.preventDefault();
+		const user = { username: "guest", password: "123456"};
+		// debugger;
 
+		this.props.processGuestUser({user}).then(()=>this.redirectIfLoggedIn());
 	}
 
 
@@ -64,10 +69,13 @@ class SessionForm extends React.Component {
 		return (
 			<div className="login-form-container">
 				<form onSubmit={this.handleSubmit} className="login-form-box">
-					Welcome to SmileNow!!
-					{this.props.formType}
-					<br/>
-					{this.renderErrors()}
+					<div className='login-form-title'>
+						Welcome to SmileNow!
+						<br/>
+						{this.props.formType}!
+						<br/>
+						{this.renderErrors()}
+					</div>
 					<div className="login-form">
 						<br/>
 						<label> Username:
@@ -88,15 +96,17 @@ class SessionForm extends React.Component {
 						<br/>
 						<div className="submitButton">
 
-							<input type="submit" value="Submit" className="login-button"/>
+							<input type="submit"
+								value="Submit" className="login-button"/>
 						</div>
-						<br/>
-						{this.navLink()}
+							<br/>
+							{this.navLink()}
+							<br/>
 						<div>
-          <button
-            type="submit"
-            onClick={this.guestLogin.bind(this)}>Guest Login</button>
-        </div>
+          		<button className="login-button"
+            		type="submit"
+            		onClick={this.guestLogin}>Guest Login</button>
+        		</div>
 					</div>
 				</form>
 			</div>

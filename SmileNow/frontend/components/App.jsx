@@ -6,7 +6,7 @@ const App = ({ children }) => (
   <div>
     <header>
       <Link to="/" className="header-link">
-        <h1>SmileNow</h1>
+        <h1>SmileNow<img src="/assets/logo2.png" /></h1>
       </Link>
       <GreetingContainer />
     </header>

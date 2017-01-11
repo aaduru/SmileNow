@@ -58,7 +58,7 @@
 
 
 header {
-  margin-left: 5%;
+  /*margin-left: 5%;*/
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -97,6 +97,10 @@ h1, h5 {
   max-width: 100%;
   text-align: center;
   vertical-align: baseline;
+}
+
+.login-form-title {
+  text-align: center;
 }
 
 .login-input {
