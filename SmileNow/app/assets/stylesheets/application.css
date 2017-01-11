@@ -13,3 +13,130 @@
  *= require_tree .
  *= require_self
  */
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+  margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+ ::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+ body {
+   font-family: 'Abel', sans-serif;
+ }
+
+.content {
+  height: 100%;
+}
+
+
+
+header {
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: #00ceff;
+}
+
+h1, h5 {
+  margin-bottom: 0px;
+}
+
+
+.header-name {
+  margin: 7px 0 0 0;
+
+}
+
+.header-favorites {
+  margin: 4px 0 4px 0;
+  font-size: 14px;
+}
+
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  padding: 0 18px;
+  max-width: 100%;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.login-input {
+  /*margin-left: 20px;*/
+}
+
+
+
+.login-form-box {
+  outline: 1px solid black;
+  padding: 20px;
+}
+
+.header-link {
+  text-decoration: none;
+  color: black;
+}
+
+hr {
+  border-bottom: 1px solid grey;
+}
+
+.login-button:hover {
+  background-color: #00e5ff;
+}
+.login-button {
+  background-color: #00ceff;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 19px 8px;
+  border-radius: 3px;
+  width: 131px;
+
+}
+
+.submitButton {
+
+}
