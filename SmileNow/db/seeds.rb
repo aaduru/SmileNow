@@ -14,3 +14,7 @@ User.create(username: "Miller", password: "123456")
 User.create(username: "Kate", password: "123456")
 User.create(username: "Tina", password: "123456")
 User.create(username: "guest", password: "123456")
+
+
+Business.create(name: "clinic1", description: "description", street_address: "160 spear st", city_state_address: "San Francisco, CA", zipcode: "94105", phone: "400-000-000", business_image_url: "http://res.cloudinary.com/dzmqqopi9/image/upload/v1484250995/clinic1_bai5kr.png")
+Business.create(name: "clinic2", description: "description", street_address: "301b Mission St", city_state_address: "San Francisco, CA", zipcode: "94105", phone: "400-000-234", business_image_url: "http://res.cloudinary.com/dzmqqopi9/image/upload/v1484251468/clinic2_g9awb4.jpg")
