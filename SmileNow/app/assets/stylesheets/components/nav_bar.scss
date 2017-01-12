@@ -1,0 +1,41 @@
+header {
+ /*margin-left: 5%;*/
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ padding: 10px;
+ background-color: $regular;
+}
+
+.header_font {
+  font-family: 'Pacifico';
+}
+.header-name {
+ margin: 7px 0 0 0;
+
+}
+
+.header-favorites {
+ margin: 4px 0 4px 0;
+ font-size: 14px;
+}
+
+.header-login-signup {
+  font-family: 'Trirong';
+}
+
+.header-image {
+ height: 20px;
+ width: 20px;
+ background-color: #00ceff;
+ color: transparent;
+}
+.header-image:hover {
+ opacity: 0.5;
+}
+
+
+.header-link {
+ text-decoration: none;
+ color: black;
+}

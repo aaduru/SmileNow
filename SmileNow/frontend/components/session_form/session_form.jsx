@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
 		this.state = { username: "", password: "" };
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.guestLogin = this.guestLogin.bind(this);
+		this.formTypeLink = this.formTypeLink.bind(this);
 	}
 
 	componentDidUpdate() {
@@ -53,6 +54,14 @@ class SessionForm extends React.Component {
 		}
 	}
 
+	formTypeLink() {
+		if (this.props.formType === "login") {
+			return <div>Log In!</div> ;
+		} else {
+			return <div>Sign Up!</div>;
+		}
+	}
+
 	renderErrors() {
 		return(
 			<ul>
@@ -67,51 +76,59 @@ class SessionForm extends React.Component {
 
 	render() {
 		return (
-			<div className="login-form-container">
-				<form onSubmit={this.handleSubmit} className="login-form-box">
-					<div className='login-form-title'>
-						Welcome to SmileNow!
-						<br/>
-						{this.props.formType}!
-						<br/>
-						{this.renderErrors()}
-					</div>
-					<div className="login-form">
-						<br/>
-						<label> Username:
-						<br/>
-						<br/>
-							<input type="text"
-								value={this.state.username}
-								onChange={this.update("username")}
-								className="login-input" />
-						</label>
-						<br/>
-						<label> Password:
-							<br/>
-							<br/>
-							<input type="password"
-								value={this.state.password}
-								onChange={this.update("password")}
-								className="login-input" />
-						</label>
-						<br/>
-						<div className="submitButton">
 
-							<input type="submit"
-								value="Submit" className="login-button"/>
+				<div className="login-form-container">
+					<form onSubmit={this.handleSubmit} className="login-form-box">
+						<div className="login-form">
+							<h1 className='h1-font'>Welcome to
+								<span className="smile-font"> SmileNow
+									<img src="/assets/logo4.png" className="logo-image"/>
+								</span>
+							</h1>
+							<br/>
+							<div className="nav-Link">
+								{this.formTypeLink()}
+							</div>
+							
+							<div className="login-errors">
+								{this.renderErrors()}
+							</div>
+							<br/>
+							<label className="login-label"> Username:
+								<br/>
+								<input type="text"
+									value={this.state.username}
+									onChange={this.update("username")}
+									className="login-input" />
+							</label>
+							<br/>
+							<label className="login-label"> Password:
+								<br/>
+								<input type="password"
+									value={this.state.password}
+									onChange={this.update("password")}
+									className="login-input" />
+							</label>
+							<br/>
+							<div className="submitButton">
+
+								<input type="submit"
+									value="Submit" className="login-button"/>
+							</div>
+							<br/>
+							<div className="nav-Link">
+								{this.navLink()}
+							</div>
+							<br/>
+							<div>
+								<button className="login-button"
+									type="submit"
+									onClick={this.guestLogin}>Guest Login</button>
+							</div>
 						</div>
-							<br/>
-							{this.navLink()}
-							<br/>
-						<div>
-          		<button className="login-button"
-            		type="submit"
-            		onClick={this.guestLogin}>Guest Login</button>
-        		</div>
-					</div>
-				</form>
-			</div>
+					</form>
+				</div>
+
 		);
 	}
 

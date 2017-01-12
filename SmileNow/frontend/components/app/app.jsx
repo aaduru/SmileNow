@@ -6,7 +6,10 @@ const App = ({ children }) => (
   <div>
     <header>
       <Link to="/" className="header-link">
-        <h1>SmileNow<img src="/assets/logo2.png" /></h1>
+        <h1 className="header_font">SmileNow
+          <img src="/assets/logo4.png" className="header-image"/>
+
+          </h1>
       </Link>
       <GreetingContainer />
     </header>
