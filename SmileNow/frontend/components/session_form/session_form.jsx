@@ -82,7 +82,7 @@ class SessionForm extends React.Component {
 						<div className="login-form">
 							<h1 className='h1-font'>Welcome to
 								<span className="smile-font"> SmileNow
-									<img src="/assets/logo4.png" className="logo-image"/>
+									<img src="http://res.cloudinary.com/dzmqqopi9/image/upload/v1484179941/logo4_fjle77.png" className="logo-image"/>
 								</span>
 							</h1>
 							<br/>

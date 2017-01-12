@@ -18,7 +18,8 @@ h1{
  /*display: flex;
  justify-content: center;*/
  position: relative;
- background-image: image-url("/assets/login.jpg");
+ // background-image: image-url("/assets/login.jpg");
+ background-image: url("http://res.cloudinary.com/dzmqqopi9/image/upload/v1484179935/login_ee4k8g.jpg");
  height: 94vh;
  background-size: cover;
 }
