@@ -44,11 +44,11 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.props.formType === "login") {
-			return <div><p>If you don't have an account</p>
+			return <div><p>don't have an account</p>
 				<Link to="/signup">Sign Up!</Link>
 				</div> ;
 		} else {
-			return <div><p>If you have an account already </p>
+			return <div><p>have an account already </p>
 				<Link to="/login">Log In!</Link>
 				</div>;
 		}
@@ -89,7 +89,7 @@ class SessionForm extends React.Component {
 							<div className="nav-Link">
 								{this.formTypeLink()}
 							</div>
-							
+
 							<div className="login-errors">
 								{this.renderErrors()}
 							</div>
