@@ -14,9 +14,9 @@ export const fetchBusiness = id => dispatch => (
 );
 
 
-export const receiveBusinesses = buisnesses => ({
+export const receiveBusinesses = businesses => ({
   type: RECEIVE_BUSINESSES,
-  buisnesses
+  businesses
 });
 
 export const receiveBusiness = business => ({

@@ -1,4 +1,4 @@
-@business.each do |clinic|
+@businesses.each do |clinic|
   json.set! clinic.id do
     json.extract! clinic, :id, :name, :business_image_url
   end

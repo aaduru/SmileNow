@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import GreetingContainer from '../greeting/greeting_container';
+import BusinessesIndexContainer from '../businesses/businesses_index_container';
 
 const App = ({ children }) => (
   <div>
@@ -13,6 +14,9 @@ const App = ({ children }) => (
       </Link>
       <GreetingContainer />
     </header>
+    <div>
+      <BusinessesIndexContainer />
+    </div>
     {children}
   </div>
 );

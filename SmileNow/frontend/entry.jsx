@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import { fetchBusiness, fetchBusinesses } from './actions/business_actions';
+// import { fetchBusiness, fetchBusinesses } from './util/business_api_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
