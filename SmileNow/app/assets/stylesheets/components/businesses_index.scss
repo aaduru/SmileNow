@@ -1,0 +1,68 @@
+.index_container {
+  // display: flex;
+  // justify-content: space-between;
+  padding-top: 20px;
+  border: 0px;
+}
+.caption {
+  font-weight: bold;
+  color: $heading;
+}
+.index_list_container {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.list_index_box {
+  padding:10px;
+  box-sizing: border-box;
+  width: 65%;
+  // > ul > li  {
+  //   background-color: red;
+  // }
+
+}
+.map_container {
+  height: 400px;
+  width: 30%;
+  border:1px solid whitesmoke;
+  // position: fixed;
+  padding: 10 px;
+  margin-top: 100px;
+}
+.list_index {
+  margin-top: 20px;
+  margin-left:20px;
+  display: flex;
+  justify-content:flex-start;
+  height: 140px;
+  border: 1px solid whitesmoke;
+  // padding:20px;
+  background-color: whitesmoke;
+}
+
+
+.image_box {
+  border-radius: 3px;
+  vertical-align: middle;
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+
+}
+.title_data{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.title_box a {
+  text-decoration: none;
+  font-family: 'Chewy';
+}
+
+.address_box {
+  box-sizing: border-box;
+
+}

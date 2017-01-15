@@ -1,0 +1,40 @@
+.name_box {
+  color: #02599a;
+  padding:20px;
+}
+.name_box h1 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.item_box{
+  display: flex;
+  justify-content: flex-start;
+}
+.item_box .address_box {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ccc;
+    height: 350px;
+    width: 200px;
+    /* text-align: center; */
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.image_box {
+
+}
+
+.more_info_box {
+
+}
+
+.h1_display {
+  color: $regular;
+}
+
+.info_display {
+  text-decoration: none;
+}
