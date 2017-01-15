@@ -4,4 +4,5 @@ class Business < ActiveRecord::Base
   validates :name, uniqueness: true
 
   has_one :business_info
+  has_many :reviews
 end
