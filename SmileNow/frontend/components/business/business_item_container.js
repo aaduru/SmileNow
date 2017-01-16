@@ -4,13 +4,18 @@ import { fetchBusiness } from '../../actions/business_actions';
 import BusinessReducer from '../../reducers/business_reducer';
 
 import BusinessItem from './business_item';
+import { fetchReviews, createReview } from '../../actions/reviews_actions';
+
 
 const mapStateToProps = (state, ownProps) => ({
-  business: state.business
+  business: state.business,
+  reviews: state.reviews
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchBusiness: () => dispatch(fetchBusiness(ownProps.params.businessId))
+  fetchBusiness: () => dispatch(fetchBusiness(ownProps.params.businessId)),
+  fetchReviews: (id) => dispatch(fetchReviews(ownProps.params.businessId)),
+  createReview: (id, review) => dispatch(createReview(ownProps.params.businessId, review))
 });
 
 export default connect(

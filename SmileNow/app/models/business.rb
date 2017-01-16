@@ -5,4 +5,12 @@ class Business < ActiveRecord::Base
 
   has_one :business_info
   has_many :reviews
+
+  def average_rating
+    reviews.average(:rating)
+  end
+
+  def count_rating
+    reviews.count(:rating)
+  end
 end

@@ -1,6 +1,7 @@
 .name_box {
   color: #02599a;
   padding:20px;
+  background-color: whitesmoke;
 }
 .name_box h1 {
   font-weight: bold;
@@ -10,21 +11,50 @@
 .item_box{
   display: flex;
   justify-content: flex-start;
+  padding-top: 20px;
 }
 .item_box .address_box {
-    padding: 20px;
+    padding: 10px;
     background: #fff;
     border: 1px solid #ccc;
-    height: 350px;
-    width: 200px;
+    height: 370px;
+    width: 300px;
     /* text-align: center; */
     align-items: center;
     margin-top: 20px;
     margin-left: 20px;
+    text-align: right;
+}
+.map_item_box {
+  height: 250px;
+  border: 1px solid whitesmoke;
+}
+.image_index_box {
+  padding-top: 20px;
+  cursor: pointer;
+
+}
+.img_index_box {
+  object-fit: cover;
+  height: 200px;
+  width: 200px;
+  transform: translateZ(0) rotate(0);
+  transition: all .2s ease-in-out;
+  border-bottom: 1px solid whitesmoke;
 }
 
-.image_box {
+.img_index_box:hover {
+  object-fit: contain;
+  height: 300px;
+  width: 300px;
+  transform-origin: bottom;
+  transform: scale(1.1);
+}
 
+.extra_info_box {
+  padding: 20px;
+  display:flex;
+  justify-content: space-between;
 }
 
 .more_info_box {
