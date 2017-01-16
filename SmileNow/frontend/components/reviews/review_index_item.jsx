@@ -9,13 +9,17 @@ class ReviewIndexItem extends React.Component {
   render() {
 
     return (
-      <div >
-        <div>
-          <p>by: {this.props.review.user.username}</p>
-              {this.props.review.rating}
+        <div className="review_box">
+          <div className="reviewername_box">
+            <h1>{this.props.review.user.username}</h1>
+          </div>
+          <div className="review_contents">
+            <h3>Rating:  {this.props.review.rating}</h3>
+            <p>{this.props.review.content}</p>
+          </div>
         </div>
-        <p>{this.props.review.context}</p>
-      </div>
+
+
     );
   }
 }

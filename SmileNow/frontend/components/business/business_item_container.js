@@ -14,8 +14,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchBusiness: () => dispatch(fetchBusiness(ownProps.params.businessId)),
-  fetchReviews: (id) => dispatch(fetchReviews(ownProps.params.businessId)),
-  createReview: (id, review) => dispatch(createReview(ownProps.params.businessId, review))
+  fetchReviews: (id) => dispatch(fetchReviews(ownProps.params.businessId))
+  // createReview: (id, review) => dispatch(createReview(ownProps.params.businessId, review))
 });
 
 export default connect(

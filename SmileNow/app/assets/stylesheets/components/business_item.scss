@@ -1,7 +1,9 @@
 .name_box {
   color: #02599a;
-  padding:20px;
   background-color: whitesmoke;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 25px;
 }
 .name_box h1 {
   font-weight: bold;
@@ -12,6 +14,9 @@
   display: flex;
   justify-content: flex-start;
   padding-top: 20px;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 .item_box .address_box {
     padding: 10px;
@@ -25,12 +30,21 @@
     margin-left: 20px;
     text-align: right;
 }
+.business_address {
+  padding: 10px;
+  background-color: whitesmoke;
+}
+.logo_image {
+  height: 14px;
+  width: 15px;
+}
 .map_item_box {
   height: 250px;
   border: 1px solid whitesmoke;
 }
 .image_index_box {
   padding-top: 20px;
+  padding-left: 50px;
   cursor: pointer;
 
 }
@@ -40,7 +54,7 @@
   width: 200px;
   transform: translateZ(0) rotate(0);
   transition: all .2s ease-in-out;
-  border-bottom: 1px solid whitesmoke;
+
 }
 
 .img_index_box:hover {
@@ -52,19 +66,26 @@
 }
 
 .extra_info_box {
-  padding: 20px;
   display:flex;
   justify-content: space-between;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0 25px;
 }
 
 .more_info_box {
-
+  padding-right: 20px;
 }
 
 .h1_display {
-  color: $regular;
+  color: #02599a;
 }
 
+.more_info_bold {
+  font-weight: bold;
+  text-transform: capitalize;
+  color: $regular;
+}
 .info_display {
   text-decoration: none;
 }

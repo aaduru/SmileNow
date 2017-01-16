@@ -3,11 +3,11 @@ import ReviewIndexItem from './review_index_item';
 
 
 class ReviewIndex extends React.Component {
-  render() {
 
+  render() {
     return (
       <div>
-        <h3>REVIEWS</h3>
+        <h1 className="h1_display">REVIEWS</h1>
         {this.props.reviews.map(review => (
           <ReviewIndexItem key={review.id} review={review}/>
         ))}

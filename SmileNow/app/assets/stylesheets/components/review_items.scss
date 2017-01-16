@@ -1,0 +1,22 @@
+.review_box {
+  padding: 10px;
+  display: flex;
+  // justify-content:space-around;
+  width: 67%;
+  margin: 0px;
+
+}
+.reviewername_box {
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 30%;
+}
+
+.review_contents {
+  float: right;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 67%;
+  padding-left: 40px;
+}

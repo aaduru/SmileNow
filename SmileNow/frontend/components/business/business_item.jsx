@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-
+import ReviewIndex from '../reviews/review_index';
+import ReviewFormContainer from '../reviews/review_form_container';
 
 class BusinessItem extends React.Component {
   constructor (props){
     super(props);
+
   }
 
   componentDidMount(){
     this.props.fetchBusiness();
-
+    this.props.fetchReviews();
   }
 
   render(){
 
-    if (this.props.business.business_info === undefined){
+    if (this.props.business.business_info === undefined || this.props.business.reviews === undefined){
       return (
         <div>
 
@@ -31,17 +33,22 @@ class BusinessItem extends React.Component {
               <p>{this.props.business.description}</p>
             </li>
           </ul>
+          <ReviewFormContainer />
         </div>
         <div className="item_box">
           <div className="address_box">
             <div className="map_item_box">
               <p>map will go here</p>
             </div>
-            <ul>
-              <li>{this.props.business.street_address}</li>
-              <li>{this.props.business.city_state_address}, {this.props.business.zipcode}</li>
-              <li>{this.props.business.phone}</li>
-            </ul>
+            <div className="business_address">
+              <ul>
+                <li><img src="http://res.cloudinary.com/dzmqqopi9/image/upload/v1484585081/map_zuoll0.png"  className="logo_image"/>
+                    {this.props.business.street_address}</li>
+                <li>{this.props.business.city_state_address}, {this.props.business.zipcode}</li>
+                <li><img src="http://res.cloudinary.com/dzmqqopi9/image/upload/v1484585086/phone_exjpkc.png" className="logo_image" />
+                    {this.props.business.phone}</li>
+              </ul>
+            </div>
           </div>
           <div  className="image_index_box">
             <img src={this.props.business.business_image_url} className="img_index_box"/>
@@ -49,14 +56,23 @@ class BusinessItem extends React.Component {
         </div>
         <div className="extra_info_box">
           <div className="review_box">
-            reviews go here
+            <ReviewIndex reviews={this.props.business.reviews}/>
           </div>
           <div className="more_info_box">
             <h1 className="h1_display">More Clinic Information </h1>
             <ul>
-              <li className="info_display"> Accept Credit cards: {this.props.business.business_info.accept_credit_card} </li>
-              <li> Accept Insurance: {this.props.business.business_info.accept_insurance} </li>
-              <li> By Appointment Only: {this.props.business.business_info.by_appointment_only} </li>
+              <li className="info_display">
+                Accept Credit cards:
+                <span className="more_info_bold">{this.props.business.business_info.accept_credit_card}</span>
+              </li>
+              <li className="info_display">
+                Accept Insurance:
+                <span className="more_info_bold">{this.props.business.business_info.accept_insurance}</span>
+              </li>
+              <li className="info_display">
+                By Appointment Only:
+                <span className="more_info_bold">{this.props.business.business_info.by_appointment_only}</span>
+              </li>
             </ul>
           </div>
         </div>
