@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import StarRatingComponent from 'react-star-rating-component';
+import merge from 'lodash/merge';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -14,22 +15,25 @@ class ReviewForm extends React.Component {
    }
 
   update(property) {
-    return e => this.setState({ [property]: e.currentTarget.value });
+    return e => this.setState(merge(this.state, { content: e.currentTarget.value }));
   }
 
 
   handleSubmit(e) {
     e.preventDefault();
+    const businessID = parseInt(this.props.params.businessId);
+    debugger
     const newReview = { rating: this.state.rating, content: this.state.content };
-    this.props.createReview(this.props.businessId, newReview).then(() => {
+    this.props.createReview(businessID, newReview).then(() => {
       this.setState({ rating: 0, content: ""});
-  }
+  });
+}
 
   render() {
-    const {rating} = this.state.rating;
+    const { rating } = this.state.rating;
     return(
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Rating
             <div>
               <StarRatingComponent
@@ -37,7 +41,7 @@ class ReviewForm extends React.Component {
                 starColor="#ffb400"
                 emptyStarColor="#ffb400"
                 starCount={5}
-                value={rating}
+                value={this.state.rating}
                 renderStarIcon={(index, value) => {
                   return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
                 }}

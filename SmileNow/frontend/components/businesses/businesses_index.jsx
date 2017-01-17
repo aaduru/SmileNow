@@ -4,6 +4,7 @@ import { Link, withRouter } from 'react-router';
 class BusinessesIndex extends React.Component {
   constructor (props){
     super(props);
+    debugger
   }
   componentDidMount(){
     this.props.fetchBusinesses();
@@ -28,6 +29,10 @@ class BusinessesIndex extends React.Component {
                       <div className="title_data">
                         <div className="title_box">
                           <Link to={`/businesses/${businessIndex.id}`} >{businessIndex.name}</Link>
+                          <span>No Of Reviews:</span>
+                          <span>
+                             
+                          </span>
                         </div>
                         <div className="address_box">
                           <ul>

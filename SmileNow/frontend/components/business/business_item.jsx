@@ -6,12 +6,20 @@ import ReviewFormContainer from '../reviews/review_form_container';
 class BusinessItem extends React.Component {
   constructor (props){
     super(props);
+    this.reviewForm = this.reviewForm.bind(this);
 
   }
 
   componentDidMount(){
     this.props.fetchBusiness();
     this.props.fetchReviews();
+  }
+
+  reviewForm(e) {
+    debugger
+    e.preventDefault();
+    const url = `/businesses/${this.props.business.id}/reviews`;
+    this.props.router.push(`${url}`);
   }
 
   render(){
@@ -31,9 +39,19 @@ class BusinessItem extends React.Component {
             <li>
               <h1>{this.props.business.name}</h1>
               <p>{this.props.business.description}</p>
+              <span>Rating: </span>
+              <span >
+              {this.props.business.average_rating || "No reviews yet"}
+            </span>
+            <br />
+            <span>No of Reviews: </span>
+              <span >
+              {this.props.business.count_rating || "No reviews yet"}
+            </span>
             </li>
           </ul>
-          <ReviewFormContainer />
+          <button onClick={this.reviewForm}>Write a Review</button>
+          {this.props.children}
         </div>
         <div className="item_box">
           <div className="address_box">
@@ -83,4 +101,4 @@ class BusinessItem extends React.Component {
   }
 }
 
-export default BusinessItem;
+export default withRouter(BusinessItem);
