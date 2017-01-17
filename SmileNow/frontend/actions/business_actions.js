@@ -3,8 +3,12 @@ import * as APIUtil from '../util/business_api_util';
 export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 
-export const fetchBusinesses = () => dispatch => (
-  APIUtil.fetchBusinesses()
+// export const fetchBusinesses = () => dispatch => (
+//   APIUtil.fetchBusinesses()
+//     .then(businesses => dispatch(receiveBusinesses(businesses)))
+// );
+export const fetchBusinesses = (filters) => dispatch => (
+  APIUtil.fetchBusinesses(filters)
     .then(businesses => dispatch(receiveBusinesses(businesses)))
 );
 

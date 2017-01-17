@@ -1,6 +1,17 @@
 class Api::BusinessesController < ApplicationController
   def index
     @businesses = Business.all
+    # query = params[:search]
+    # query_filter_id = params[:filterId]
+    #
+    # if query_filter_id == "0"
+    #   @businesses = Business.where("name LIKE ?", "%#{query}%")
+    # else
+    #   @businesses = Business.where("name LIKE ?", "%#{query}%")
+    #                         .joins(:taggings)
+    #                         .where("taggings.tag_id = ?", query_filter_id)
+    #
+    # end
 
     render "api/businesses/index"
   end

@@ -6,7 +6,7 @@ import merge from 'lodash/merge';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { rating: 3.5, content: "" };
+    this.state = { rating: 3.5, content: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -18,15 +18,18 @@ class ReviewForm extends React.Component {
     return e => this.setState(merge(this.state, { content: e.currentTarget.value }));
   }
 
+  backToBusinessPage(){
+    const url = `/businesses/${this.props.params.businessId}`;
+    this.props.router.push(`${url}`);
+
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const businessID = parseInt(this.props.params.businessId);
-    debugger
-    const newReview = { rating: this.state.rating, content: this.state.content };
-    this.props.createReview(businessID, newReview).then(() => {
-      this.setState({ rating: 0, content: ""});
-  });
+    const newReview = { rating: this.state.rating, content: this.state.content, business_id: businessID };
+    this.props.createReview(businessID, newReview);
+    this.backToBusinessPage();
 }
 
   render() {

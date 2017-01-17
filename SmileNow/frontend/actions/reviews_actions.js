@@ -1,15 +1,20 @@
 import * as ReviewUtil from '../util/reviews_api_util';
+import { fetchBusiness } from './business_actions';
 
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "CREATE_REVIEW";
 export const REMOVE_REVIEW = "REMOVE_REVIEW";
 
-export const fetchReviews = (businessId) => dispatch => (
-  ReviewUtil.fetchReviews(businessId).then(rev => dispatch(receiveReviews(rev)))
-);
+// export const fetchReviews = (businessId) => dispatch => (
+//   ReviewUtil.fetchReviews(businessId).then(rev => dispatch(receiveReviews(rev)))
+// );
+
+// export const createReview = (businessId, review) => dispatch => (
+//   ReviewUtil.createReview(businessId, review).then(rev => dispatch(receiveReview(rev)))
+// );
 
 export const createReview = (businessId, review) => dispatch => (
-  ReviewUtil.createReview(businessId, review).then(rev => dispatch(receiveReview(rev)))
+  ReviewUtil.createReview(businessId, review).then(() => dispatch(fetchBusiness(businessId)))
 );
 
 // export const updateReview = (businessId, reviewId, review) => dispatch => (

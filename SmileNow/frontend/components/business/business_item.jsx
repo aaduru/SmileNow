@@ -12,11 +12,12 @@ class BusinessItem extends React.Component {
 
   componentDidMount(){
     this.props.fetchBusiness();
-    this.props.fetchReviews();
+    // this.props.fetchReviews();
   }
 
+
+
   reviewForm(e) {
-    debugger
     e.preventDefault();
     const url = `/businesses/${this.props.business.id}/reviews`;
     this.props.router.push(`${url}`);

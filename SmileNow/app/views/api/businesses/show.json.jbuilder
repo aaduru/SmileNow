@@ -2,5 +2,5 @@ json.extract! @business, :id, :name, :description, :street_address, :city_state_
 
 
 json.reviews do
-  json.partial! 'api/reviews/review', collection: @business.reviews, as: :review
+  json.partial! 'api/reviews/index', reviews: @business.reviews
 end

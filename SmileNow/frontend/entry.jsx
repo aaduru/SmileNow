@@ -7,6 +7,7 @@ import configureStore from './store/store';
 import { fetchReviews } from './actions/reviews_actions';
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
