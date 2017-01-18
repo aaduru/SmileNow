@@ -5,20 +5,25 @@
 //   })
 // );
 
-export const fetchBusinesses = (search ,filter) => {
+export const fetchBusinesses = (search ,filterId) => {
 
-  let url =  'api/businesses';
-  if (search || filter ) {
-    url += "?";
-    if (search) {
-      url += `search=${search}`;
-      if (filter){
-        url += '&';
-      }
-    }
-    if (filter) {
-      url += `filter=${filter}`;
-    }
+  // let url =  'api/businesses';
+  // if (search || filterId ) {
+  //   url += "?";
+  //   if (search) {
+  //     url += `search=${search}`;
+  //     if (filterId){
+  //       url += '&';
+  //     }
+  //   }
+  //   if (filterId) {
+  //     url += `filterId=${filterId}`;
+  //   }
+  // }
+
+  let url = 'api/businesses';
+  if (filterId) {
+    url += `?filterId=${filterId}`;
   }
   return $.ajax({
     method: 'GET',

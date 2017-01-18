@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 
-import { updateFilter } from '../../actions/filter_actions';
+import { updateFilter } from '../../actions/filters_actions';
 
-import FilterForm from './search';
+import FilterForm from './filter_form';
 
 const mapStateToProps = (state, ownProps) => ({
+
   filters : {
     search: state.filters.filterId
-  },
-  tags: state.business.tags
+  }
 });
 
 const mapDispatchToProps = dispatch => ({

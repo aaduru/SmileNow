@@ -31,6 +31,7 @@ const Root = ({ store }) => {
         <Route path="/" component={App}>
           <IndexRoute component={BusinessesIndexContainer} />
           <Route path="/businesses/search" component={BusinessesIndexContainer} />
+          <Route path="/businesses/filterId" component={BusinessesIndexContainer} />
           <Route path="/businesses/:businessId" component={BusinessItemContainer}>
             <Route path="/businesses/:businessId/reviews"
               component={ReviewFormContainer} onEnter={_ensureLoggedIn} />

@@ -9,7 +9,8 @@ import { fetchReviews, createReview } from '../../actions/reviews_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   business: state.business,
-  reviews: state.reviews
+  reviews: state.reviews,
+  tags: state.tags
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

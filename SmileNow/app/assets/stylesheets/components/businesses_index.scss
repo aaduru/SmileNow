@@ -18,7 +18,7 @@
 .list_index_box {
   padding:10px;
   box-sizing: border-box;
-  width: 65%;
+  width: 55%;
   // > ul > li  {
   //   background-color: red;
   // }
@@ -26,7 +26,7 @@
 }
 .map_container {
   height: 400px;
-  width: 30%;
+  width: 40%;
   border:1px solid whitesmoke;
   // position: fixed;
   padding: 10 px;
@@ -36,13 +36,18 @@
   margin-top: 20px;
   margin-left:20px;
   display: flex;
-  justify-content:flex-start;
-  height: 140px;
+  justify-content:space-between;
+  height: 120px;
   border: 1px solid whitesmoke;
   // padding:20px;
   background-color: whitesmoke;
 }
 
+.title_data{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
 
 .image_box {
   border-radius: 3px;
@@ -52,10 +57,7 @@
   object-fit: contain;
 
 }
-.title_data{
-  display: flex;
-  justify-content: flex-end;
-}
+
 
 .title_box a {
   text-decoration: none;
@@ -64,5 +66,7 @@
 
 .address_box {
   box-sizing: border-box;
+  padding: 10px;
+  padding-right: 20px;
 
 }

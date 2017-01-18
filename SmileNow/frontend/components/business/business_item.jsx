@@ -1,21 +1,20 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import ReviewIndex from '../reviews/review_index';
+import TagIndex from '../tag/tag_index';
 import ReviewFormContainer from '../reviews/review_form_container';
+import StarRatingComponent from 'react-star-rating-component';
 
 class BusinessItem extends React.Component {
   constructor (props){
     super(props);
     this.reviewForm = this.reviewForm.bind(this);
-
   }
 
   componentDidMount(){
     this.props.fetchBusiness();
     // this.props.fetchReviews();
   }
-
-
 
   reviewForm(e) {
     e.preventDefault();
@@ -25,7 +24,7 @@ class BusinessItem extends React.Component {
 
   render(){
 
-    if (this.props.business.business_info === undefined || this.props.business.reviews === undefined){
+    if (this.props.business.business_info === undefined || this.props.business.reviews === undefined || this.props.business.tags === undefined){
       return (
         <div>
 
@@ -40,11 +39,22 @@ class BusinessItem extends React.Component {
             <h1>{this.props.business.name}</h1>
 
             <p>{this.props.business.description}</p>
+
           </div>
             <div className="rating_display">
               <span className="review_details">Rating: </span>
               <span >
-                {this.props.business.average_rating || "No reviews yet"}
+                <StarRatingComponent
+                    name="business_rating"
+                    starColor="#00ceff"
+                    emptyStarColor="#00ceff"
+                    starCount={5}
+                    value={Math.round(this.props.business.average_rating)}
+                    editing={false}
+                    renderStarIcon={(index, value) => {
+                      return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
+                    }}
+                />
               </span>
               <br />
 
@@ -63,7 +73,7 @@ class BusinessItem extends React.Component {
           </div>
         </div>
         <div className="item_box">
-          <div className="address_box">
+          <div className="add_box">
             <div className="map_item_box">
               <p>map will go here</p>
             </div>
@@ -80,13 +90,9 @@ class BusinessItem extends React.Component {
           <div  className="image_index_box">
             <img src={this.props.business.business_image_url} className="img_index_box"/>
           </div>
-        </div>
-        <div className="extra_info_box">
-          <div className="review_box">
-            <ReviewIndex reviews={this.props.business.reviews}/>
-          </div>
           <div className="more_info_box">
             <h1 className="h1_display">More Clinic Information </h1>
+            <br />
             <ul>
               <li className="info_display">
                 Accept Credit cards:
@@ -102,6 +108,12 @@ class BusinessItem extends React.Component {
               </li>
             </ul>
           </div>
+        </div>
+        <div className="extra_info_box">
+          <div className="review_box">
+            <ReviewIndex reviews={this.props.business.reviews}/>
+          </div>
+
         </div>
 
       </div>

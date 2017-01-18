@@ -1,17 +1,25 @@
 class Api::BusinessesController < ApplicationController
   def index
     # @businesses = Business.all
-    query = params[:search]
     query_filter_id = params[:filterId]
-    if params[:search] && params[:filterId]
-      @businesses = Business.where("name LIKE ?", "%#{query}%")
-                            .joins(:taggings)
+    # query = params[:search]
+    # if params[:search] && params[:filterId]
+    #   @businesses = Business.where("name LIKE ?", "%#{query}%")
+    #                         .includes(:taggings)
+    #                         .where("taggings.tag_id = ?", query_filter_id)
+    # elsif params[:search]
+    #   @businesses = Business.where("name LIKE ?", "%#{query}%")
+    # elsif params[:filterId]
+    #   @businesses = Business.where("taggings.tag_id = ?", query_filter_id)
+    #                         .includes(:taggings)
+    # else
+    #   @businesses = Business.all
+    # end
+    if params[:filterId]
+      @businesses = Business.includes(:taggings)
                             .where("taggings.tag_id = ?", query_filter_id)
-    elsif params[:search]
-      @businesses = Business.where("name LIKE ?", "%#{query}%")
-    elsif params[:filterId]
-      @businesses = Business.where("taggings.tag_id = ?", query_filter_id)
-                            .joins(:taggings)
+                            .includes(:reviews)
+
     else
       @businesses = Business.all
     end

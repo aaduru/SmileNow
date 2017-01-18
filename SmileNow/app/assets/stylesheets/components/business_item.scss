@@ -38,13 +38,13 @@
 }
 .item_box{
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding-top: 20px;
   width: 960px;
   margin: 0 auto;
   padding: 0 15px;
 }
-.item_box .address_box {
+.add_box {
     padding: 10px;
     background: #fff;
     border: 1px solid #ccc;
@@ -70,15 +70,17 @@
 }
 .image_index_box {
   padding-top: 20px;
-  padding-left: 50px;
+
   cursor: pointer;
+  margin-top: 20px;
+  margin-left: 20px;
 
 }
 .img_index_box {
   object-fit: cover;
   height: 200px;
   width: 200px;
-  transform: translateZ(0) rotate(0);
+  // transform: translateZ(0) rotate(0);
   transition: all .2s ease-in-out;
 
 }
@@ -87,20 +89,19 @@
   object-fit: contain;
   height: 300px;
   width: 300px;
-  transform-origin: bottom;
+  // transform-origin: bottom;
   transform: scale(1.1);
 }
 
 .extra_info_box {
-  display:flex;
-  justify-content: space-between;
   width: 960px;
   margin: 0 auto;
   padding: 0 25px;
 }
 
 .more_info_box {
-  padding-right: 20px;
+  margin-top: 118px;
+  padding: 20px;
 }
 
 .h1_display {

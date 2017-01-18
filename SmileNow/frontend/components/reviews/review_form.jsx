@@ -6,7 +6,7 @@ import merge from 'lodash/merge';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { rating: 3.5, content: ""};
+    this.state = { rating: 3, content: ""};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -41,15 +41,13 @@ class ReviewForm extends React.Component {
             <div>
               <StarRatingComponent
                 name="rate1"
-                starColor="#ffb400"
-                emptyStarColor="#ffb400"
+                starColor="$regular"
+                emptyStarColor="$regular"
                 starCount={5}
                 value={this.state.rating}
                 renderStarIcon={(index, value) => {
                   return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
                 }}
-                renderStarIconHalf={() => <span className="fa fa-star-half-full" />}
-                onStarClick={this.onStarClick.bind(this)}
                 />
             </div>
           </label>

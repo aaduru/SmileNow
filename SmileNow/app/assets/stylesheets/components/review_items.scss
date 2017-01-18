@@ -1,13 +1,14 @@
 .review_box {
-  padding: 10px;
-  display: flex;
+  padding: 25px;
+  // display: flex;
   // justify-content:space-around;
-  width: 67%;
+  // width: 67%;
   margin: 0px;
 
 
 }
 .review_item {
+  display:flex;
   background-color: whitesmoke;
 }
 .reviewername_box {
