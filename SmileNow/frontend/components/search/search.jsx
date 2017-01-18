@@ -10,6 +10,7 @@ class Search extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     let searchquery= document.getElementById('searchInput').value;
+    this.props.fetchBusinesses(searchquery, null);
     hashHistory.push({pathname: '/businesses/search', query: searchquery});
   }
 

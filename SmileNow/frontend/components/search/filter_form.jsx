@@ -10,7 +10,8 @@ class FilterForm extends React.Component {
     e.preventDefault();
     console.log(e.target.id);
     const filterId = e.target.id;
-    debugger
+    
+    this.props.fetchBusinesses(null, filterId);
     hashHistory.push({pathname: '/businesses/filterId', query: filterId});
   }
 

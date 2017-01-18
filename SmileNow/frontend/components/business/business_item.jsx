@@ -39,6 +39,10 @@ class BusinessItem extends React.Component {
             <h1>{this.props.business.name}</h1>
 
             <p>{this.props.business.description}</p>
+            <span>
+              <TagIndex tags={this.props.business.tags}/>
+            </span>
+          
 
           </div>
             <div className="rating_display">

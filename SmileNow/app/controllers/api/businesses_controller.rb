@@ -2,27 +2,33 @@ class Api::BusinessesController < ApplicationController
   def index
     # @businesses = Business.all
     query_filter_id = params[:filterId]
-    # query = params[:search]
-    # if params[:search] && params[:filterId]
-    #   @businesses = Business.where("name LIKE ?", "%#{query}%")
-    #                         .includes(:taggings)
+    query = params[:search]
+    if params[:search] && params[:filterId]
+      @businesses = Business.where("name ILIKE ?", "%#{query}%")
+                            .includes(:taggings)
+                            .where("taggings.tag_id = ?", query_filter_id)
+                            .references(:tags)
+    elsif params[:filterId]
+
+      @businesses = Business.includes(:taggings)
+                    .where("taggings.tag_id = ?", query_filter_id)
+                    .references(:tags)
+
+    elsif params[:search]
+
+      @businesses = Business.where("name ILIKE ?", "%#{query}%")
+    else
+      @businesses = Business.all.includes(:taggings)
+    end
+    # if params[:filterId]
+    #
+    #   @businesses = Business.joins(:taggings)
     #                         .where("taggings.tag_id = ?", query_filter_id)
-    # elsif params[:search]
-    #   @businesses = Business.where("name LIKE ?", "%#{query}%")
-    # elsif params[:filterId]
-    #   @businesses = Business.where("taggings.tag_id = ?", query_filter_id)
-    #                         .includes(:taggings)
+    #                         # .includes(:reviews)
+    #
     # else
     #   @businesses = Business.all
     # end
-    if params[:filterId]
-      @businesses = Business.includes(:taggings)
-                            .where("taggings.tag_id = ?", query_filter_id)
-                            .includes(:reviews)
-
-    else
-      @businesses = Business.all
-    end
     render "api/businesses/index"
   end
 

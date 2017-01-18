@@ -7,11 +7,11 @@ class TagIndex extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="h1_display">
+        <p>
           {Object.keys(this.props.tags).map((tag_key) => (
             <TagIndexItem key={tag_key} tag={this.props.tags[tag_key]}/>
           ))}
-        </h1>
+        </p>
       </div>
     );
   }

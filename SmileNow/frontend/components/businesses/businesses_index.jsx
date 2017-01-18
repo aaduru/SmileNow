@@ -10,13 +10,12 @@ class BusinessesIndex extends React.Component {
     this.props.fetchBusinesses();
   }
 
-  componentWillReceiveProps(nextProps) {
-    const sr = Object.values(this.props.location.query).join('');
-
-    if (this.props.location !== nextProps.location){
-      this.props.fetchBusinesses(sr, nextProps.filterId);
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   const sr = Object.values(this.props.location.query).join('');
+  //   if (this.props.location !== nextProps.location){
+  //     this.props.fetchBusinesses(sr, nextProps.filterId);
+  //   }
+  // }
 
   render(){
     return (
