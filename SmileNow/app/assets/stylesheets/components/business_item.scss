@@ -1,15 +1,41 @@
+.business_item_box {
+  padding: 10px;
+  margin-left:20px;
+  margin-right: 20px;
+}
 .name_box {
   color: #02599a;
   background-color: whitesmoke;
   width: 960px;
   margin: 0 auto;
-  padding: 0 25px;
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
 }
 .name_box h1 {
   font-weight: bold;
   font-size: 40px;
+  padding-bottom: 10px;
+}
+.name_display {
+  margin-left: 20px;
 }
 
+.rating_display {
+  margin-right: 50px;
+}
+.review_details {
+  padding-bottom: 15px;
+}
+.review_button {
+  background-color: $regular;
+  cursor: pointer;
+  border-radius: 3px;
+
+}
+.review_button:hover {
+ background-color: #00e5ff;
+}
 .item_box{
   display: flex;
   justify-content: flex-start;

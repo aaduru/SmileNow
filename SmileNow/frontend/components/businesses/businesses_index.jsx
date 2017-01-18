@@ -10,12 +10,9 @@ class BusinessesIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(this.props);
     const sr = Object.values(this.props.location.query).join('');
-    console.log(sr);
 
     if (this.props.location !== nextProps.location){
-      
       this.props.fetchBusinesses(sr, nextProps.filterId);
     }
   }

@@ -34,25 +34,33 @@ class BusinessItem extends React.Component {
     }
 
     return (
-      <div>
+      <div className="business_item_box">
         <div className="name_box">
-          <ul>
-            <li>
-              <h1>{this.props.business.name}</h1>
-              <p>{this.props.business.description}</p>
-              <span>Rating: </span>
+          <div className="name_display">
+            <h1>{this.props.business.name}</h1>
+
+            <p>{this.props.business.description}</p>
+          </div>
+            <div className="rating_display">
+              <span className="review_details">Rating: </span>
               <span >
-              {this.props.business.average_rating || "No reviews yet"}
-            </span>
-            <br />
-            <span>No of Reviews: </span>
+                {this.props.business.average_rating || "No reviews yet"}
+              </span>
+              <br />
+
+            <span className="review_details">No of Reviews: </span>
               <span >
               {this.props.business.count_rating || "No reviews yet"}
             </span>
-            </li>
-          </ul>
-          <button onClick={this.reviewForm}>Write a Review</button>
-          {this.props.children}
+            <br />
+
+            <button
+              onClick={this.reviewForm}
+              className="review_button" >
+              Write a Review
+            </button>
+              {this.props.children}
+          </div>
         </div>
         <div className="item_box">
           <div className="address_box">

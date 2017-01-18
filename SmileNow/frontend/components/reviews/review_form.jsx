@@ -61,7 +61,7 @@ class ReviewForm extends React.Component {
             value={ this.state.body }
             onChange={ this.update("content") }></textarea>
           </label>
-          <button>SUBMIT</button>
+          <button className="write_review">SUBMIT</button>
         </form>
       </div>
     );
