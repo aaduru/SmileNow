@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import GreetingContainer from '../greeting/greeting_container';
+import SearchContainer from '../search/search_container';
 
 const App = ({ children }) => (
   <div>
@@ -10,10 +11,11 @@ const App = ({ children }) => (
           <img src="/assets/logo4.png" className="header-image"/>
           </h1>
       </Link>
+      <SearchContainer />
       <GreetingContainer />
     </header>
     <div>
-    
+
     </div>
     {children}
   </div>

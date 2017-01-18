@@ -1,4 +1,5 @@
-import { UPDATE_FILTER } from '../actions/filters_actions';
+import { UPDATE_FILTER,
+         BUSINESS_SEARCH } from '../actions/filters_actions';
 import { merge } from 'lodash';
 
 const _defaultState = {
@@ -10,7 +11,9 @@ const FiltersReducer = (state = _defaultState, action) => {
   Object.freeze(state);
   switch (action.type) {
     case UPDATE_FILTER:
-      return merge({}, state, action.filters);
+      return merge({}, state, action.filters.filterId);
+    case BUSINESS_SEARCH:
+      return merge({}, state, action.filters.search);
     default:
       return state;
   }

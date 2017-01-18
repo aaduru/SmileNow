@@ -7,8 +7,8 @@ export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 //   APIUtil.fetchBusinesses()
 //     .then(businesses => dispatch(receiveBusinesses(businesses)))
 // );
-export const fetchBusinesses = (filters) => dispatch => (
-  APIUtil.fetchBusinesses(filters)
+export const fetchBusinesses = (search, filters) => dispatch => (
+  APIUtil.fetchBusinesses(search, filters)
     .then(businesses => dispatch(receiveBusinesses(businesses)))
 );
 

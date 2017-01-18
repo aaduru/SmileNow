@@ -18,7 +18,7 @@ class Business < ActiveRecord::Base
     reviews.count(:rating)
   end
 
-  def self.set_filter(tag_id)
+  def self.filter(tag_id)
     self.select('*')
         .joins(:taggings)
         .where('taggings.tag_id = ?', tag_id)
