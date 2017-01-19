@@ -43,6 +43,6 @@ class Api::BusinessesController < ApplicationController
     params.require(:business).permit(:name, :description, :street_address,
                                      :city_state_address, :zipcode,
                                      :phone, :business_image_url,
-                                     :business_info)
+                                     :business_info, :latitude, :longitude)
   end
 end
