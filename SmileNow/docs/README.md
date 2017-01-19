@@ -56,7 +56,7 @@ Objective: creating a search container to search the names of clinics and filter
 
 * Phase 5: Maps (2 days)
 
-Objective: Both search results and neighborhood pages show the appropriate
+Objective: Both BusinessesIndex and Business pages show the appropriate
 level of detail in their map window
 
 

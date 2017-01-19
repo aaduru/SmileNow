@@ -2,10 +2,13 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import TagIndex from '../tag/tag_index';
 import StarRatingComponent from 'react-star-rating-component';
+import BusinessesMap from './businesses_map';
 
 class BusinessesIndex extends React.Component {
+
   constructor (props){
     super(props);
+    debugger
   }
   componentDidMount(){
     this.props.fetchBusinesses();
@@ -31,7 +34,7 @@ class BusinessesIndex extends React.Component {
             <ul>
               {
                 this.props.businesses.map(businessIndex =>(
-                  <li key={businessIndex.id} >
+                  <li key={businessIndex.id}}>
                     <div className="list_index">
                       <div className="title_data">
                         <div>
@@ -74,8 +77,10 @@ class BusinessesIndex extends React.Component {
                 }
               </ul>
             </div>
-            <div className="map_container">
-              <h1>Will display map Here</h1>
+            <div className="map_container" >
+
+
+              <BusinessesMap businesses={this.props.businesses}/>
             </div>
           </div>
       </div>

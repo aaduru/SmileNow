@@ -4,6 +4,7 @@ import ReviewIndex from '../reviews/review_index';
 import TagIndex from '../tag/tag_index';
 import ReviewFormContainer from '../reviews/review_form_container';
 import StarRatingComponent from 'react-star-rating-component';
+import BusinessMap from './business_map';
 
 class BusinessItem extends React.Component {
   constructor (props){
@@ -42,7 +43,7 @@ class BusinessItem extends React.Component {
             <span>
               <TagIndex tags={this.props.business.tags}/>
             </span>
-          
+
 
           </div>
             <div className="rating_display">
@@ -79,7 +80,9 @@ class BusinessItem extends React.Component {
         <div className="item_box">
           <div className="add_box">
             <div className="map_item_box">
-              <p>map will go here</p>
+
+                <BusinessMap business={this.props.business} />
+              
             </div>
             <div className="business_address">
               <ul>
