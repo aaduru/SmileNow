@@ -10,11 +10,9 @@ class TagIndexItem extends React.Component {
   render() {
 
     return (
-        <div className="">
+        <div className="filter_display">
           <ul>
-            <li>
-              {this.props.tag.name}
-            </li>
+            <li className="filter_list">{this.props.tag.name}</li>
           </ul>
         </div>
 
