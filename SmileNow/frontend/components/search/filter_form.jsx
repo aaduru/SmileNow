@@ -8,11 +8,21 @@ class FilterForm extends React.Component {
   }
   handleClick(e) {
     e.preventDefault();
-    console.log(e.target.id);
     const filterId = e.target.id;
-    
-    this.props.fetchBusinesses(null, filterId);
-    hashHistory.push({pathname: '/businesses/filterId', query: filterId});
+    // console.log(e.target.id);
+    // debugger
+    const query_loc = Object.values(this.props.location.query).join('');
+    console.log(query_loc);
+    if (this.props.location.query){
+
+      this.props.fetchBusinesses(query_loc, filterId);
+      hashHistory.push({pathname: '/businesses/search', query: query_loc});
+
+    }
+    else {
+      this.props.fetchBusinesses(null, filterId);
+      hashHistory.push({pathname: '/businesses/filterId', query: filterId});
+    }
   }
 
   render(){

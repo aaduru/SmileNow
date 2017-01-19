@@ -12,6 +12,7 @@ class Search extends React.Component {
     let searchquery= document.getElementById('searchInput').value;
     this.props.fetchBusinesses(searchquery, null);
     hashHistory.push({pathname: '/businesses/search', query: searchquery});
+        // hashHistory.push({pathname: `/businesses/search?search=${searchquery}`});
   }
 
   render (){

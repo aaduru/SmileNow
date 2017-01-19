@@ -6,7 +6,7 @@ import { fetchBusinesses } from '../../actions/business_actions';
 import FilterForm from './filter_form';
 
 const mapStateToProps = (state, ownProps) => ({
-
+  location: ownProps.location,
   filters : {
     search: state.filters.filterId
   }

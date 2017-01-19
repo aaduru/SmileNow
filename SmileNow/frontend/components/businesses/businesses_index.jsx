@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import TagIndex from '../tag/tag_index';
 import StarRatingComponent from 'react-star-rating-component';
 
 class BusinessesIndex extends React.Component {
@@ -18,6 +19,8 @@ class BusinessesIndex extends React.Component {
   // }
 
   render(){
+
+
     return (
       <div className="index_container">
         <div className="caption">
@@ -56,6 +59,7 @@ class BusinessesIndex extends React.Component {
                           </span>
                           <br />
                           <span>No of Reviews: {businessIndex.count_rating}</span>
+                          <span><TagIndex tags={businessIndex.tags}/></span>
                         </div>
                       </div>
                       <div className="address_box">

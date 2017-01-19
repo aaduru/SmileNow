@@ -6,7 +6,9 @@ import BusinessesReducer from '../../reducers/businesses_reducer';
 import BusinessesIndex from './businesses_index';
 
 const mapStateToProps = state => ({
-  businesses: Object.keys(state.businesses).map(id => state.businesses[id])
+  businesses: Object.keys(state.businesses).map(id => state.businesses[id]),
+  reviews: state.reviews,
+  tags: state.tags
 
 });
 
