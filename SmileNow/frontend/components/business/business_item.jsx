@@ -14,7 +14,6 @@ class BusinessItem extends React.Component {
 
   componentDidMount(){
     this.props.fetchBusiness();
-    // this.props.fetchReviews();
   }
 
   reviewForm(e) {
@@ -28,7 +27,6 @@ class BusinessItem extends React.Component {
     if (this.props.business.business_info === undefined || this.props.business.reviews === undefined || this.props.business.tags === undefined){
       return (
         <div>
-
         </div>
       );
     }
@@ -38,13 +36,10 @@ class BusinessItem extends React.Component {
         <div className="name_box">
           <div className="name_display">
             <h1>{this.props.business.name}</h1>
-
             <p>{this.props.business.description}</p>
             <span>
               <TagIndex tags={this.props.business.tags}/>
             </span>
-
-
           </div>
             <div className="rating_display">
               <span className="review_details">Rating: </span>
@@ -69,9 +64,8 @@ class BusinessItem extends React.Component {
             </span>
             <br />
 
-            <button
-              onClick={this.reviewForm}
-              className="review_button" >
+            <button onClick={this.reviewForm} className="review_button" >
+              <img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484933913/star_smxfvk.png"  className="star_image"/>
               Write a Review
             </button>
               {this.props.children}
@@ -82,14 +76,14 @@ class BusinessItem extends React.Component {
             <div className="map_item_box">
 
                 <BusinessMap business={this.props.business} />
-              
+
             </div>
             <div className="business_address">
               <ul>
-                <li><img src="http://res.cloudinary.com/dzmqqopi9/image/upload/v1484585081/map_zuoll0.png"  className="logo_image"/>
+                <li><img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484585081/map_zuoll0.png"  className="logo_image"/>
                     {this.props.business.street_address}</li>
                 <li>{this.props.business.city_state_address}, {this.props.business.zipcode}</li>
-                <li><img src="http://res.cloudinary.com/dzmqqopi9/image/upload/v1484585086/phone_exjpkc.png" className="logo_image" />
+                <li><img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484585086/phone_exjpkc.png" className="logo_image" />
                     {this.props.business.phone}</li>
               </ul>
             </div>

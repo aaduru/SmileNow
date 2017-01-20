@@ -23,28 +23,7 @@ class BusinessMap extends React.Component {
       position: mapCenter,
       map: this.map
     });
-
-    // let lat = Object.keys(nextProps.businesses.latitude;
-    // let long = nextProps.businesses.longitude;
-    // console.log(lat);
-    // console.log(long);
-    // const mapCenter = { lat: 37.7758, lng: -122.435 }
-    // const options = {
-    //   center: mapCenter,
-    //   zoom: 13
-    // };
-    //
-    // this.map = new google.maps.Map(mapRef, options);
-    //
-    //
-    // const marker = new google.maps.Marker({
-    //   position: mapCenter,
-    //   map: this.map
-    // });
   }
-
-
-
 
   render() {
     return (

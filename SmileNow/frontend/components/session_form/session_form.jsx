@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
 	guestLogin(e){
 		e.preventDefault();
 		const user = { username: "guest", password: "123456"};
-	
+
 		this.props.processGuestUser({user}).then(()=>this.redirectIfLoggedIn());
 	}
 
@@ -77,11 +77,12 @@ class SessionForm extends React.Component {
 		return (
 
 				<div className="login-form-container">
+					<h1 className="main_caption">Find the Perfect Dental care with SmileNow!</h1>
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						<div className="login-form">
 							<h1 className='h1-font'>Welcome to
 								<span className="smile-font"> SmileNow
-									<img src="http://res.cloudinary.com/dzmqqopi9/image/upload/v1484179941/logo4_fjle77.png" className="logo-image"/>
+									<img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484179941/logo4_fjle77.png" className="logo-image"/>
 								</span>
 							</h1>
 							<br/>

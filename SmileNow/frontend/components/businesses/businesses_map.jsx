@@ -18,10 +18,6 @@ class BusinessesMap extends React.Component {
 
     this.map = new google.maps.Map(mapRef, options);
 
-    // const marker = new google.maps.Marker({
-    //   position: mapCenter,
-    //   map: this.map
-    // });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,9 +26,9 @@ class BusinessesMap extends React.Component {
       let lat = business.latitude;
       let lng = business.longitude;
 
-      let contentString = `${business.name}`;
+      let string = `${business.name}`;
       let infowindow = new google.maps.InfoWindow({
-        content: contentString
+        content: string
       });
 
       const marker = new google.maps.Marker({
@@ -54,10 +50,9 @@ class BusinessesMap extends React.Component {
       });
     });
 
-    console.log(nextProps.selected);
-    let contentString = `${nextProps.selected.name}`;
+    let string = `${nextProps.selected.name}`;
     let infowindow = new google.maps.InfoWindow({
-      content: contentString
+      content: string
     });
 
     if (nextProps.selected.selected === "selected"){
@@ -68,20 +63,8 @@ class BusinessesMap extends React.Component {
         businessId: nextProps.selected.businessId
       });
       infowindow.open(this.map, marker);
-      setTimeout(function() {infowindow.close();}, 20000);
+      setTimeout(function() {infowindow.close();}, 3000);
       marker.setIcon('http://maps.google.com/mapfiles/ms/icons/blue-dot.png');
-
-    }else if (nextProps.selected.selected === null && nextProps.selected.businessId !== null){
-
-      const marker = new google.maps.Marker({
-        position: {lat: nextProps.selected.lat, lng: nextProps.selected.long},
-        map: this.map,
-        businessId: nextProps.selected.businessId
-      });
-      debugger
-      infowindow.close();
-      marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
-
     }
 
   }

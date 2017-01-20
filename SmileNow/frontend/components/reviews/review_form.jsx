@@ -59,7 +59,12 @@ class ReviewForm extends React.Component {
             value={ this.state.body }
             onChange={ this.update("content") }></textarea>
           </label>
-          <button className="write_review">SUBMIT</button>
+          <br />
+
+          <div className="review_buttons">
+            <button className="write_review">SUBMIT</button>
+            <button className="write_review" onClick={this.backToBusinessPage.bind(this)}>CANCEL</button>
+          </div>
         </form>
       </div>
     );

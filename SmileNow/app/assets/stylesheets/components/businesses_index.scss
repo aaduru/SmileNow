@@ -14,7 +14,9 @@
   justify-content: space-between;
 
 }
-
+.space_box {
+  padding-bottom: 15px;
+}
 .list_index_box {
   padding:10px;
   box-sizing: border-box;
@@ -37,16 +39,18 @@
   height: 100%;
   width: 100%;
 }
-
+.businesses_index {
+  min-height: 120px;
+  border: 1px solid whitesmoke;
+  padding-bottom: 5px;
+  background-color: whitesmoke;
+}
 .list_index {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left:20px;
   display: flex;
   justify-content:space-between;
-  min-height: 120px;
-  border: 1px solid whitesmoke;
-  // padding:20px;
-  background-color: whitesmoke;
+
 }
 #map_holder {
   height: 100%;
@@ -62,12 +66,16 @@
 .image_box {
   border-radius: 3px;
   vertical-align: middle;
-  height: 100px;
-  width: 100px;
-  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 
 }
-
+.image_div_box {
+  height: 100px;
+  width: 100px;
+  padding-right: 10px;
+}
 
 .title_box a {
   text-decoration: none;
@@ -79,4 +87,12 @@
   padding: 10px;
   padding-right: 20px;
 
+}
+.star_image {
+  height: 15px;
+  width: 15px;
+  padding-right: 3px;
+}
+.business_title {
+  font-size: 20px;
 }
