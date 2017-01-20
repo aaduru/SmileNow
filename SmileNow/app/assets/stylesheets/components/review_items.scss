@@ -6,11 +6,12 @@
   // width: 67%;
   margin: 0px;
 
-
 }
 .review_item {
   display:flex;
   background-color: whitesmoke;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
 }
 .reviewername_box {
   float: left;
@@ -19,6 +20,7 @@
   width: 30%;
   color: $heading;
   padding-left: 50px;
+  margin:10px;
 }
 
 .review_contents {
@@ -27,6 +29,7 @@
   box-sizing: border-box;
   width: 67%;
   padding-left: 40px;
+  margin: 10px; 
 }
 
 .rating_des {
@@ -48,5 +51,5 @@
   display: flex;
   justify-content: flex-start;
   padding-top: 10px;
-  
+
 }

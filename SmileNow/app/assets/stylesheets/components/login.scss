@@ -20,7 +20,7 @@ h1{
  position: relative;
  // background-image: image-url("/assets/login.jpg");
  background-image: url("https://res.cloudinary.com/dzmqqopi9/image/upload/v1484179935/login_ee4k8g.jpg");
- height: 94vh;
+ height: 87.4vh;
  background-size: cover;
 }
 
@@ -93,7 +93,7 @@ hr {
  justify-content: center;
  align-items: center;*/
  position: absolute;
- top: 10%;
+ top: 14%;
  left: 39%;
  border: 1px solid black;
  padding: 20px;
@@ -109,4 +109,6 @@ hr {
   text-align: center;
   font-size: 30px;
   padding:10px;
+  font-family: 'Pacifico';
+  margin: 5px;
 }
