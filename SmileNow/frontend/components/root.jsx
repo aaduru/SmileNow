@@ -29,7 +29,7 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={BusinessesIndexContainer} />
+          <IndexRoute component={BusinessesIndexContainer} onEnter={ _ensureLoggedIn} />
           <Route path="/businesses/search" component={BusinessesIndexContainer} />
           <Route path="/businesses/filterId" component={BusinessesIndexContainer} />
           <Route path="/businesses/:businessId" component={BusinessItemContainer}>

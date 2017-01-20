@@ -8,22 +8,22 @@ class BusinessesIndex extends React.Component {
 
   constructor (props){
     super(props);
-    debugger
+    this.state = {selected: null, businessId: null, lat: null, long: null, name: null};
+
   }
   componentDidMount(){
     this.props.fetchBusinesses();
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   const sr = Object.values(this.props.location.query).join('');
-  //   if (this.props.location !== nextProps.location){
-  //     this.props.fetchBusinesses(sr, nextProps.filterId);
-  //   }
-  // }
+  changeMap(id, lat, long, name) {
+    this.setState({selected: "selected", businessId: id, lat: lat, long: long, name: name });
+  }
+
+  originalMap() {
+    this.setState({selected: null});
+  }
 
   render(){
-
-
     return (
       <div className="index_container">
         <div className="caption">
@@ -34,7 +34,8 @@ class BusinessesIndex extends React.Component {
             <ul>
               {
                 this.props.businesses.map(businessIndex =>(
-                  <li key={businessIndex.id}}>
+                  <li key={businessIndex.id} onMouseEnter={this.changeMap.bind(this, businessIndex.id, businessIndex.latitude, businessIndex.longitude, businessIndex.name)}
+                      onMouseLeave={this.originalMap.bind(this, businessIndex.id, businessIndex.latitude, businessIndex.longitude, businessIndex.name)}>
                     <div className="list_index">
                       <div className="title_data">
                         <div>
@@ -78,9 +79,7 @@ class BusinessesIndex extends React.Component {
               </ul>
             </div>
             <div className="map_container" >
-
-
-              <BusinessesMap businesses={this.props.businesses}/>
+              <BusinessesMap businesses={this.props.businesses} selected={this.state}/>
             </div>
           </div>
       </div>
