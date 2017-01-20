@@ -23,6 +23,7 @@
 
 .rating_display {
   margin-right: 50px;
+
 }
 .review_details {
   padding-bottom: 15px;
@@ -31,6 +32,7 @@
   background-color: $regular;
   cursor: pointer;
   border-radius: 3px;
+  margin-top: 15px;
 
 }
 .review_button:hover {
@@ -125,4 +127,17 @@
 #map_business_holder {
   height: 100%;
   width: 100%;
+}
+
+.h1_name_display {
+  font-family: 'Pacifico';
+}
+
+.rating_review_star {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.business_tags {
+  margin-top: 10px;
 }

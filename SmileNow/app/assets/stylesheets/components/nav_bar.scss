@@ -22,7 +22,7 @@ footer {
 }
 .header-name {
  margin: 7px 0 0 0;
-
+ padding-bottom: 5px;
 }
 
 .header-favorites {
@@ -48,4 +48,23 @@ footer {
 .header-link {
  text-decoration: none;
  color: black;
+}
+
+.log_out_button:hover {
+ background-color: #dedbdb;
+}
+.log_out_button {
+ background-color: white;
+ color: black;
+ display: inline-block;
+ vertical-align: middle;
+ margin: 0;
+ cursor: pointer;
+ border: 1px solid;
+ font-weight: bold;
+ text-align: center;
+ padding: 4px 14px 4px;
+ border-radius: 3px;
+
+
 }

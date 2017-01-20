@@ -35,28 +35,33 @@ class BusinessItem extends React.Component {
       <div className="business_item_box">
         <div className="name_box">
           <div className="name_display">
-            <h1>{this.props.business.name}</h1>
+            <h1 className="h1_name_display">{this.props.business.name}</h1>
             <p>{this.props.business.description}</p>
-            <span>
+            <span className="business_tags">
               <TagIndex tags={this.props.business.tags}/>
             </span>
           </div>
             <div className="rating_display">
-              <span className="review_details">Rating: </span>
-              <span >
-                <StarRatingComponent
-                    name="business_rating"
-                    starColor="#00ceff"
-                    emptyStarColor="#00ceff"
-                    starCount={5}
-                    value={Math.round(this.props.business.average_rating)}
-                    editing={false}
-                    renderStarIcon={(index, value) => {
-                      return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
-                    }}
-                />
-              </span>
-              <br />
+              <div className="rating_review_star">
+                <div className="des_box">
+                  <h3 className="rating_des">Rating:
+                  </h3>
+                </div>
+                <div className="star_box">
+                  <span className="rating_star">
+                    <StarRatingComponent
+                        name="business_rating"
+                        starColor="#00ceff"
+                        emptyStarColor="#00ceff"
+                        starCount={5}
+                        value={Math.round(this.props.business.average_rating)}
+                        editing={false}
+                        renderStarIcon={(index, value) => {
+                          return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
+                        }} />
+                  </span>
+                </div>
+              </div>
 
             <span className="review_details">No of Reviews: </span>
               <span >
@@ -74,9 +79,7 @@ class BusinessItem extends React.Component {
         <div className="item_box">
           <div className="add_box">
             <div className="map_item_box">
-
                 <BusinessMap business={this.props.business} />
-
             </div>
             <div className="business_address">
               <ul>
@@ -88,27 +91,30 @@ class BusinessItem extends React.Component {
               </ul>
             </div>
           </div>
-          <div  className="image_index_box">
-            <img src={this.props.business.business_image_url} className="img_index_box"/>
+          <div className="info_and_image">
+            <div  className="image_index_box">
+              <img src={this.props.business.business_image_url} className="img_index_box"/>
+            </div>
+            <div className="more_info_box">
+              <h1 className="h1_display">More Clinic Information </h1>
+              <br />
+              <ul>
+                <li className="info_display">
+                  Accept Credit cards:
+                  <span className="more_info_bold">{this.props.business.business_info.accept_credit_card}</span>
+                </li>
+                <li className="info_display">
+                  Accept Insurance:
+                  <span className="more_info_bold">{this.props.business.business_info.accept_insurance}</span>
+                </li>
+                <li className="info_display">
+                  By Appointment Only:
+                  <span className="more_info_bold">{this.props.business.business_info.by_appointment_only}</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div className="more_info_box">
-            <h1 className="h1_display">More Clinic Information </h1>
-            <br />
-            <ul>
-              <li className="info_display">
-                Accept Credit cards:
-                <span className="more_info_bold">{this.props.business.business_info.accept_credit_card}</span>
-              </li>
-              <li className="info_display">
-                Accept Insurance:
-                <span className="more_info_bold">{this.props.business.business_info.accept_insurance}</span>
-              </li>
-              <li className="info_display">
-                By Appointment Only:
-                <span className="more_info_bold">{this.props.business.business_info.by_appointment_only}</span>
-              </li>
-            </ul>
-          </div>
+
         </div>
         <div className="extra_info_box">
           <div className="review_box">

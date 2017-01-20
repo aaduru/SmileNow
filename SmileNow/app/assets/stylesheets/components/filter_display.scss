@@ -1,16 +1,28 @@
 .filter_display {
   display: flex;
   justify-content: space-between;
+  // padding-top: 5px;
+  // padding-right: 5px;
+  border: 1px solid #dedbdb;
+  background-color: #dedbdb;
+  border-radius: 5px;
+  margin: 5px;
+  margin-top: 10px;
 }
 
 .filter_list {
   text-decoration: none;
-  padding-top: 5px;
-  padding-right: 5px;
+  // padding-top: 5px;
+  // padding-right: 5px;
+  // border: 1px solid #dedbdb;
+  // background-color: #dedbdb;
+  // border-radius: 5px;
 }
 
 .filter_tags {
   display: flex;
   justify-content: space-between;
-
+  flex-flow: row wrap;
+  padding-left: 10px;
+  padding-right: 10px;
 }

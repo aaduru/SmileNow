@@ -49,21 +49,26 @@ class BusinessesIndex extends React.Component {
                               <h1 className="business_title">
                                 <Link to={`/businesses/${businessIndex.id}`} >{businessIndex.name}</Link>
                               </h1>
-                              <span>Review Rating:
-                                <span >
-                                  <StarRatingComponent
-                                    name="business_rating"
-                                    starColor="#00ceff"
-                                    emptyStarColor="#00ceff"
-                                    starCount={5}
-                                    value={Math.round(businessIndex.average_rating)}
-                                    editing={false}
-                                    renderStarIcon={(index, value) => {
-                                      return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
-                                    }}
-                                    />
-                                </span>
-                              </span>
+                              <div className="rating_review_star">
+                                <div className="des_box">
+                                  <h3 className="rating_des">Rating:
+                                  </h3>
+                                </div>
+                                <div className="star_box">
+                                  <span className="rating_star">
+                                    <StarRatingComponent
+                                        name="business_rating"
+                                        starColor="#00ceff"
+                                        emptyStarColor="#00ceff"
+                                        starCount={5}
+                                        value={Math.round(businessIndex.average_rating)}
+                                        editing={false}
+                                        renderStarIcon={(index, value) => {
+                                          return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
+                                        }} />
+                                  </span>
+                                </div>
+                              </div>
                               <br />
                               <span>No of Reviews: {businessIndex.count_rating}</span>
                             </div>
