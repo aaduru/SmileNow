@@ -10,7 +10,8 @@ class BusinessesMap extends React.Component {
 
   componentDidMount() {
     const mapRef = this.refs.businessesMap;
-    const mapCenter = { lat: 37.7758, lng: -122.435 }
+    // const mapCenter = { lat: 37.7758, lng: -122.435 }
+    const mapCenter = { lat: 37.759051, lng: -122.446786};
     const options = {
       center: mapCenter,
       zoom: 12

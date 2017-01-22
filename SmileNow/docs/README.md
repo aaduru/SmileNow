@@ -4,7 +4,7 @@
 
 [Trello link][trello]
 
-[heroku]: smilenow.herokuapp.com
+[heroku]: https://smilenow.herokuapp.com/
 [trello]: https://trello.com/smilenow1
 
 ## Minimum Viable Product
@@ -27,11 +27,11 @@ SmileNow is a web application inspired by Yelp(search engine for dental clinics)
  * [DB schema][schema]
  * [Sample State][sample-state]
 
- [wireframes]: docs/wireframes
- [components]: docs/component-hierarchy.md
- [sample-state]: docs/sample-state.md
- [api-endpoints]: docs/api-endpoints.md
- [schema]: docs/schema.md
+ [wireframes]: (./wireframes)
+ [components]: (./component-hierarchy.md)
+ [sample-state]: (./sample-state.md)
+ [api-endpoints]: (./api-endpoints.md)
+ [schema]: (./schema.md)
 
 
 

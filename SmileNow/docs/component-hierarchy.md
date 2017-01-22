@@ -12,25 +12,22 @@
 **HeaderContainer**
 -home
 
-
 **FilterContainer**
 -SearchIndexItem
--Filters
--TypeOfClinic
--Map
+-Filters(type of clinic)
 
 **BusinessContainer**
 -BusinessIndex
 --BusinessIndexItem
 ---ReviewIndex
+--map
 
 
 **ReviewContainer**
 -ReviewIndex
 --ReviewIndexItem
 --ReviewDetail
----ReviewAdd
----ReviewEdit
+
 
 
 Routes

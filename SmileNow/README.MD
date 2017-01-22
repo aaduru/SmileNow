@@ -14,7 +14,7 @@ SmileNow
 - Search based on the name of the clinic and filter based on the tags
 - Displays the location of the business on the map.
 
-![businessespage: http://www.smilenow.me/#/][businesses]
+![businessespage:http://www.smilenow.me/#/][businesses]
 ![businesspage:http://www.smilenow.me/#/businesses/1][business]
 
 ## Project Design

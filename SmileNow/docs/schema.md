@@ -17,7 +17,7 @@ profile_image     | string    |
   - has many `reviews`
   - has many `ratings` through `reviews`
   - has many `tags` through `taggings`
-  <!-- - has many `doctors` -->
+
 
 column name     | data type | details
 ----------------|-----------|-----------------------
@@ -25,7 +25,6 @@ id              | integer   | not null, primary key
 name            | string    | not null, indexed, unique
 description     | string    | not null, indexed, unique
 image_url       | string    |
-<!-- no_of_doctors   | integer   | not null -->
 address         | string    | not null
 --------------------------------------------------------
 
@@ -41,28 +40,6 @@ by_appointment_only | string    | not null, default value no
 accept_insurance    | string    | not null, default value no
 --------------------------------------------------------
 
-<!-- ## business_hours  
-
-column name         | data type | details
---------------------|-----------|-----------------------
-id                  | integer   | not null, primary key
-business_id         | integer   | not null, foreign_key, indexed
-start_time          | string    | not null
-end_time            | string    | not null
-open/closed         | string    | not null, default value closed
--------------------------------------------------------- -->
-<!-- ## doctors
-
-  - belong to `business`
-
-column name     | data type | details
-----------------|-----------|-----------------------
-id              | integer   | not null, primary key
-name            | string    | not null, indexed, unique
-description     | string    | not null, indexed, unique
-image_url       | string    |
-speciality      | string    | not null
---------------------------------------------------------- -->
 
 ## reviews
 
