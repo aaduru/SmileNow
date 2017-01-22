@@ -21,18 +21,11 @@ SmileNow is a web application inspired by Yelp(search engine for dental clinics)
 
 
  ## Design Docs
- * [View Wireframes][wireframes]
- * [React Components][components]
- * [API endpoints][api-endpoints]
- * [DB schema][schema]
- * [Sample State][sample-state]
-
- [wireframes]: (./wireframes)
- [components]: (./component-hierarchy.md)
- [sample-state]: (./sample-state.md)
- [api-endpoints]: (./api-endpoints.md)
- [schema]: (./schema.md)
-
+ * [View Wireframes](./wireframes)
+ * [React Components](./component-hierarchy.md)
+ * [API endpoints](./api-endpoints.md)
+ * [DB schema](./schema.md)
+ * [Sample State](./sample-state.md)
 
 
 ##Implementation Timeline
