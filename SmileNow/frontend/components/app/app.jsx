@@ -26,7 +26,21 @@ const App = ({ children }) => (
     </header>
 
     {children}
-
+    <footer>
+      <div className="nav_bar">
+        <span>
+          <h3>Website designed by Ujwala Aaduru</h3>
+        </span>
+        <span>
+          <a href="https://github.com/aaduru">
+            <img src="http://res.cloudinary.com/dzmqqopi9/image/upload/v1485187130/GitHub_xqwzee.png" className="footer-image" />GitHub</a>
+          </span>
+          <span>
+            <a href="https://www.linkedin.com/in/ujwala-aaduru-91578334">
+              <img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1485187121/linkedin_hcue5i.png" className="footer-image" />linkedin</a>
+            </span>
+      </div>
+    </footer>
   </div>
 );
 
