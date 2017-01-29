@@ -1,12 +1,24 @@
 .search_input {
   border-radius: 5px;
-  width:160px;
+  width:280px;
   padding-left: 2px;
   padding-right: 2px;
+
+  display: inline-block;
+  // padding: 10px 15px;
+  font-size: 19px;
+  // border-radius: 0;
+  // border: 1px solid transparent;
 }
 
 .search_label{
   padding-right:10px;
+
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 0;
+  border: 1px solid transparent;
 }
 .search_image {
   height: 20px;
@@ -22,8 +34,24 @@
 
 .search_button {
   margin: 0px;
+  margin-top: 2px;
   padding: 0px;
   padding-left: 10px;
   border-style: none;
   background-color: #00ceff;
+
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 0;
+  border: 1px solid transparent;
 }
+//
+// .search_div {
+//   display: flex;
+//   justify-content: flex-start;
+// }
+//
+// .search_button_div {
+//   margin-top: 5px;
+// }

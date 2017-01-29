@@ -37,7 +37,7 @@ const App = ({ children }) => (
           </span>
           <span>
             <a href="https://www.linkedin.com/in/ujwala-aaduru-91578334">
-              <img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1485187121/linkedin_hcue5i.png" className="footer-image" />linkedin</a>
+              <img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1485187121/linkedin_hcue5i.png" className="footer-image" />Linkedin</a>
             </span>
       </div>
     </footer>

@@ -1,6 +1,7 @@
 header {
  /*margin-left: 5%;*/
  padding: 10px;
+ padding-bottom: 0px;
  background-color: $regular;
 }
 
@@ -41,10 +42,17 @@ footer {
  color: transparent;
 }
 
+.footer-image:hover {
+  opacity: 0.5;
+}
+
 .footer-image {
   height: 20px;
   width: 20px;
+  padding-right: 3px;
+  // margin-left: 5px;
 }
+
 .header-image:hover {
  opacity: 0.5;
 }

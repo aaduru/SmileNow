@@ -17,18 +17,19 @@ class Search extends React.Component {
 
   render (){
     return (
-      <div>
+      <div className="search_div">
         <form onSubmit={this.handleSubmit}>
           <label className="search_label">Search</label>
-            <input id='searchInput'
-              className="search_input"
-              type='text'
-              placeholder='Enter the clinic name to search'/>
-
+          <input id='searchInput'
+            className="search_input"
+            type='text'
+            placeholder='Enter the clinic name to search'/>
+      
           <button className="search_button">
             <img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484737809/search_p7opzg.png"
               className="search_image" />
           </button>
+
         </form>
       </div>
     );

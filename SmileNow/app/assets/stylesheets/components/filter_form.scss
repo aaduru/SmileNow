@@ -3,6 +3,10 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.filter_item:hover {
+  background-color:grey;
+}
 .filter_item {
   cursor: pointer;
 }
