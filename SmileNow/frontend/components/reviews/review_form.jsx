@@ -35,9 +35,9 @@ class ReviewForm extends React.Component {
   render() {
     const { rating } = this.state.rating;
     return(
-      <div>
+      <div className="reviewform_div">
         <form onSubmit={this.handleSubmit}>
-          <label>Rating
+          <label className="review_label">Rating</label>
             <div>
               <StarRatingComponent
                 name="rate1"
@@ -50,15 +50,16 @@ class ReviewForm extends React.Component {
                 }}
                 />
             </div>
-          </label>
-          <label>Review
-            <br/>
+
+          <br />
+          <label className="review_label">Review</label>
+          <br />
           <textarea
             cols='30'
             rows='10'
             value={ this.state.body }
             onChange={ this.update("content") }></textarea>
-          </label>
+
           <br />
 
           <div className="review_buttons">
