@@ -17,10 +17,10 @@ class BusinessesIndex extends React.Component {
 
   componentWillReceiveProps(nextProps){
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === '/') {
-      debugger
+
       this.props.fetchBusinesses();
     }
-    console.log(nextProps);
+    
   }
 
   changeMap(id, lat, long, name) {

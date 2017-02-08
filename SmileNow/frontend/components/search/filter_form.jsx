@@ -10,9 +10,9 @@ class FilterForm extends React.Component {
     e.preventDefault();
     const filterId = e.target.id;
     // console.log(e.target.id);
-  
+
     const query_loc = Object.values(this.props.location.query).join('');
-    console.log(query_loc);
+    // console.log(query_loc);
     if (this.props.location.query){
 
       this.props.fetchBusinesses(query_loc, filterId);

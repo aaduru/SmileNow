@@ -34,7 +34,7 @@ class ReviewForm extends React.Component {
 }
 
   renderErrors() {
-    debugger
+    // debugger
     if (this.props.errors) {
 
       return(
