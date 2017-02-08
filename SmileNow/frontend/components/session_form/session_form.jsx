@@ -10,10 +10,28 @@ class SessionForm extends React.Component {
 		this.formTypeLink = this.formTypeLink.bind(this);
 	}
 
-	componentDidUpdate() {
+	componentDidUpdate(nextprops) {
 		this.redirectIfLoggedIn();
+		// this.props.clearErrors();
 	}
 
+	// componentWillUpdate() {
+	// 	 this.props.clearErrors();
+	// }
+
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.formType !== this.props.formType) {
+			this.props.clearErrors();
+		}
+	}
+
+	// shouldComponentUpdate() {
+	// 	this.props.clearErrors();
+	// }
+
+	// componentWillMount() {
+	// 	this.props.clearErrors();
+	// }
 	redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
 			this.props.router.push("/");
@@ -44,10 +62,12 @@ class SessionForm extends React.Component {
 	navLink() {
 		if (this.props.formType === "login") {
 			return <div><p>don't have an account</p>
+
 				<Link to="/signup">Sign Up!</Link>
 				</div> ;
 		} else {
 			return <div><p>have an account already </p>
+
 				<Link to="/login">Log In!</Link>
 				</div>;
 		}

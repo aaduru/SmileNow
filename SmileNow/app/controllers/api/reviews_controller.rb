@@ -7,7 +7,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render :show
     else
-      render json: @review, status: :unprocessable_entity
+      render json: ["please enter a review"], status: :unprocessable_entity
     end
   end
 

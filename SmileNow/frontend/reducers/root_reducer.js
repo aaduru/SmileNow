@@ -5,13 +5,14 @@ import BusinessReducer from './business_reducer';
 import BusinessesReducer from './businesses_reducer';
 import ReviewsReducer from './reviews_reducer';
 import FiltersReducer from './filters_reducer';
+import ReviewErrorReducer from './review_error_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
   business: BusinessReducer,
   businesses: BusinessesReducer,
-  filters: FiltersReducer
-
+  filters: FiltersReducer,
+  review_error: ReviewErrorReducer
 });
 
 export default RootReducer;

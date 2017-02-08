@@ -1,5 +1,7 @@
 import * as ReviewUtil from '../util/reviews_api_util';
 import { fetchBusiness } from './business_actions';
+import { receiveReviewErrors } from './errors_actions';
+import { hashHistory }  from 'react-router';
 
 export const RECEIVE_REVIEWS = "RECEIVE_REVIEWS";
 export const RECEIVE_REVIEW = "CREATE_REVIEW";
@@ -14,7 +16,13 @@ export const REMOVE_REVIEW = "REMOVE_REVIEW";
 // );
 
 export const createReview = (businessId, review) => dispatch => (
-  ReviewUtil.createReview(businessId, review).then(() => dispatch(fetchBusiness(businessId)))
+  ReviewUtil.createReview(businessId, review)
+  .then(() => {
+    dispatch(fetchBusiness(businessId));
+    const url = `/businesses/${businessId}`;
+    hashHistory.push(`${url}`);
+  },
+    errors => dispatch(receiveReviewErrors(errors.responseJSON)))
 );
 
 // export const updateReview = (businessId, reviewId, review) => dispatch => (

@@ -1,6 +1,7 @@
 import { RECEIVE_REVIEWS,
          RECEIVE_REVIEW,
          REMOVE_REVIEW } from '../actions/reviews_actions';
+
 import merge from 'lodash/merge';
 
 const ReviewsReducer = (oldState = {}, action) => {

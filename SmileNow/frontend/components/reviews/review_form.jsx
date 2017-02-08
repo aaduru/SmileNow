@@ -19,6 +19,7 @@ class ReviewForm extends React.Component {
   }
 
   backToBusinessPage(){
+
     const url = `/businesses/${this.props.params.businessId}`;
     this.props.router.push(`${url}`);
 
@@ -29,14 +30,39 @@ class ReviewForm extends React.Component {
     const businessID = parseInt(this.props.params.businessId);
     const newReview = { rating: this.state.rating, content: this.state.content, business_id: businessID };
     this.props.createReview(businessID, newReview);
-    this.backToBusinessPage();
+    // this.backToBusinessPage();
 }
+
+  renderErrors() {
+    debugger
+    if (this.props.errors) {
+
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }else {
+      return(
+        <div>
+
+        </div>
+      );
+    }
+  }
 
   render() {
     const { rating } = this.state.rating;
     return(
       <div className="reviewform_div">
         <form onSubmit={this.handleSubmit}>
+          <div className="login-errors">
+            {this.renderErrors()}
+          </div>
           <label className="review_label">Rating</label>
             <div>
               <StarRatingComponent
