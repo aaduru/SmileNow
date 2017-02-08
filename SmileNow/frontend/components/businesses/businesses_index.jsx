@@ -15,6 +15,14 @@ class BusinessesIndex extends React.Component {
     this.props.fetchBusinesses();
   }
 
+  componentWillReceiveProps(nextProps){
+    if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === '/') {
+      debugger
+      this.props.fetchBusinesses();
+    }
+    console.log(nextProps);
+  }
+
   changeMap(id, lat, long, name) {
     this.setState({selected: "selected", businessId: id, lat: lat, long: long, name: name });
   }
