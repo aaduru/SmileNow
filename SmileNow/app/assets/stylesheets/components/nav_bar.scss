@@ -3,11 +3,22 @@ header {
  padding: 10px;
  padding-bottom: 0px;
  background-color: $regular;
+ // position:fixed;
+ // left:0px;
+ // top:0px;
+ // z-index: 20;
+ width:100%;
 }
 
 footer {
   padding: 10px;
   background-color: $regular;
+  // position:fixed;
+  // left:0px;
+  // bottom:0px;
+
+  width:100%;
+
 }
 .nav_bar {
   display: flex;

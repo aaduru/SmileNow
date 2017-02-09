@@ -9,7 +9,7 @@ class BusinessesIndex extends React.Component {
   constructor (props){
     super(props);
     this.state = {selected: null, businessId: null, lat: null, long: null, name: null};
-
+    this.searchquery;
   }
   componentDidMount(){
     this.props.fetchBusinesses();
@@ -20,7 +20,26 @@ class BusinessesIndex extends React.Component {
 
       this.props.fetchBusinesses();
     }
-    
+  }
+
+  componentWillUpdate(){
+
+    if ((this.props.location.pathname === '/businesses/search') && (Object.keys(this.props.businesses).length === 0)){
+      this.searchquery = (
+            <div>
+              No object found for this search query
+            </div>
+          );
+    }
+    if ((this.props.location.pathname === '/') && (Object.keys(this.props.businesses).length !== 0)){
+
+      this.searchquery = (
+        <div>
+
+        </div>
+      );
+    }
+
   }
 
   changeMap(id, lat, long, name) {
@@ -30,6 +49,18 @@ class BusinessesIndex extends React.Component {
   originalMap() {
     this.setState({selected: null});
   }
+
+  // emptyBusinesses() {
+  //
+  //   if (Object.keys(this.props.businesses).length === 0) {
+  //
+  //     return(
+  //       <div>
+  //         No object found for this search query
+  //       </div>
+  //     );
+  //   }
+  // }
   render(){
     return (
       <div className="index_container">
@@ -37,6 +68,7 @@ class BusinessesIndex extends React.Component {
           <h1 className="main_caption">Find the Perfect Dental care with SmileNow!</h1>
         </div>
         <div className="index_list_container">
+          {this.searchquery}
           <div className="list_index_box">
             <ul>
               {
@@ -98,7 +130,7 @@ class BusinessesIndex extends React.Component {
                 }
               </ul>
             </div>
-            <div className="map_container" >
+            <div className="map_container" id="map_container"  >
               <BusinessesMap businesses={this.props.businesses} selected={this.state}/>
             </div>
           </div>
