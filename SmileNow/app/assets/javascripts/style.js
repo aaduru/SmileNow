@@ -7,17 +7,69 @@
 //   }
 // }
 
+// function onScroll() {
+//     var content = document.getElementById('content');
+//     var container = document.getElementById('container');
+//     var scrollTop = content.scrollTop;
+//     var elOffsetTop = container.offsetTop;
+//     var elHeight = container.offsetHeight;
+//     if ((scrollTop > elOffsetTop)&&(scrollTop<elOffsetTop+elHeight)) {
+//       content.classList.add("on-top");
+//     } else {
+//       content.classList.remove("on-top");
+//     }
+//   }
+
+// $(window).scroll(function() {
+// var stickySidebar = $('.map_container').offset().top;
+//
+//     if ($(window).scrollTop() > stickySidebar) {
+//         debugger
+//         // $('.map_Container').css({position: 'fixed', top: '0px'});
+//         $('.map_container').addClass('on-top');
+//         console.log($('.map_container').hasClass('on-top'));
+//     }
+//     else {
+//         $('.map_container').removeClass('on-top');
+//     }
+// });
 
 
-$(window).scroll(function() {
-var stickySidebar = $('.map_container').offset().top;
+$(function(){
+        $(window).scroll(function(){
+          var stickyMapTop = $('.map_container').offset().top;
+          var viewportWidth = $(window).width();
+          console.log("maptop");
+          console.log(stickyMapTop);
+          console.log("scrollTop");
+          console.log($(window).scrollTop());
 
-    if ($(window).scrollTop() > stickySidebar) {
-        debugger
-        $('.map_container').addClass('on-top');
-        console.log($('.map_container').hasClass('on-top'));
-    }
-    else {
-        $('.map_container').removeClass('on-top');
-    }
-});
+          if($(window).scrollTop() >= stickyMapTop) {
+              // debugger
+              console.log("inside");
+              console.log(stickyMapTop);
+              console.log($(window).scrollTop());
+              $('.map_container').css({position: 'fixed', top: '0px', margintop: '10px', marginbottom: '10px'});
+          } else if ($(window).scrollTop() === 0)  {
+              debugger
+              console.log("inside else");
+              $('.map_container').css({position: 'relative', top: '24%'});
+          }
+
+        });
+      });
+
+
+
+  // $(window).scroll(function(){
+  //   var stickyMapTop = $('.map_Container').offset().top;
+  //   debugger
+  //   console.log(stickyMapTop);
+  //   console.log($(window).scrollTop());
+  //   if($(window).scrollTop() > stickyMapTop) {
+  //     $('.map_Container').css({position: 'fixed', top: '0px', left: $('.map_Container').offset().left});
+  //   } else {
+  //       $('.map_Container').css({position: 'relative', top: '0px'});
+  //     }
+  //
+  // });

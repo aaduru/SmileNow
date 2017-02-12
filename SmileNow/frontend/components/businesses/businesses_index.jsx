@@ -67,16 +67,15 @@ class BusinessesIndex extends React.Component {
         <div className="caption">
           <h1 className="main_caption">Find the Perfect Dental care with SmileNow!</h1>
         </div>
-        <div className="index_list_container">
-          {this.searchquery}
-          <div className="list_index_box">
-            <ul>
-              {
-                this.props.businesses.map(businessIndex =>(
+        <div className="container">
+          <div className="index_list_container">
+            {this.searchquery}
+            <div className="list_index_box">
+              <ul>
+                { this.props.businesses.map(businessIndex =>(
                   <li key={businessIndex.id} onMouseEnter={this.changeMap.bind(this, businessIndex.id, businessIndex.latitude, businessIndex.longitude, businessIndex.name)}
-                      onMouseLeave={this.originalMap.bind(this, businessIndex.id, businessIndex.latitude, businessIndex.longitude, businessIndex.name)}>
+                    onMouseLeave={this.originalMap.bind(this, businessIndex.id, businessIndex.latitude, businessIndex.longitude, businessIndex.name)}>
                     <div className="space_box">
-
                       <div className="businesses_index">
                         <div className="list_index">
                           <div className="title_data">
@@ -97,43 +96,46 @@ class BusinessesIndex extends React.Component {
                                 <div className="star_box">
                                   <span className="rating_star">
                                     <StarRatingComponent
-                                        name="business_rating"
-                                        starColor="#00ceff"
-                                        emptyStarColor="#00ceff"
-                                        starCount={5}
-                                        value={Math.round(businessIndex.average_rating)}
-                                        editing={false}
-                                        renderStarIcon={(index, value) => {
-                                          return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
-                                        }} />
-                                  </span>
+                                      name="business_rating"
+                                      starColor="#00ceff"
+                                      emptyStarColor="#00ceff"
+                                      starCount={5}
+                                      value={Math.round(businessIndex.average_rating)}
+                                      editing={false}
+                                      renderStarIcon={(index, value) => {
+                                        return <span className={index <= value ? 'fa fa-star' : 'fa fa-star-o'} />;
+                                      }} />
+                                    </span>
+                                  </div>
                                 </div>
+                                <br />
+                                <span>No of Reviews: {businessIndex.count_rating}</span>
                               </div>
-                              <br />
-                              <span>No of Reviews: {businessIndex.count_rating}</span>
+                            </div>
+                            <div className="address_box">
+                              <ul>
+                                <li>{businessIndex.street_address}</li>
+                                <li>{businessIndex.city_state_address}, {businessIndex.zipcode}</li>
+                                <li>{businessIndex.phone}</li>
+                              </ul>
                             </div>
                           </div>
-                          <div className="address_box">
-                            <ul>
-                              <li>{businessIndex.street_address}</li>
-                              <li>{businessIndex.city_state_address}, {businessIndex.zipcode}</li>
-                              <li>{businessIndex.phone}</li>
-                            </ul>
+                          <div>
+                            <span><TagIndex tags={businessIndex.tags}/></span>
                           </div>
                         </div>
-                        <div>
-                          <span><TagIndex tags={businessIndex.tags}/></span>
-                        </div>
-                      </div>
                     </div>
                   </li>))
                 }
               </ul>
             </div>
-            <div className="map_container" id="map_container"  >
-              <BusinessesMap businesses={this.props.businesses} selected={this.state}/>
+            <div className="map_container_outer">
+              <div className="map_container" id="map_container"  >
+                <BusinessesMap businesses={this.props.businesses} selected={this.state}/>
+              </div>
             </div>
           </div>
+        </div>
       </div>
     );
   }
