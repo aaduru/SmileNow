@@ -39,21 +39,40 @@ $(function(){
         $(window).scroll(function(){
           var stickyMapTop = $('.map_container').offset().top;
           var viewportWidth = $(window).width();
+          console.log("main");
+          console.log($('.main_caption').offset().top);
+
+          console.log("main height");
+          console.log($('.main_caption').height());
+
+          var mainTop = $('.main_caption').offset().top;
+          var mainHeight = $('.main_caption').height();
+
+          var mainBottom = mainTop + mainHeight;
+          console.log("mainBottom");
+          console.log(mainBottom);
+
+          console.log("window height");
+          console.log($(window).height());
+
           console.log("maptop");
           console.log(stickyMapTop);
           console.log("scrollTop");
           console.log($(window).scrollTop());
 
-          if($(window).scrollTop() >= stickyMapTop) {
+          if($(window).scrollTop() > mainBottom) {
               // debugger
               console.log("inside");
+              console.log("maptop");
               console.log(stickyMapTop);
+              console.log("scrollTop");
               console.log($(window).scrollTop());
-              $('.map_container').css({position: 'fixed', top: '0px', margintop: '10px', marginbottom: '10px'});
-          } else if ($(window).scrollTop() === 0)  {
-              // debugger
+              $('.map_container').css({position: 'fixed', top: '0px', margintop: '10px', marginbottom: '10px', height: '93.6%'});
+          } else if ( $(window).scrollTop() <= mainBottom )  {
+              //debugger
               console.log("inside else");
-              $('.map_container').css({position: 'relative', top: '24%'});
+              console.log(stickyMapTop);
+              $('.map_container').css({position: 'relative', height: '430px', overflow: 'hidden'});
           }
 
         });
