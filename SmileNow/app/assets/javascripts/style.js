@@ -51,7 +51,7 @@ $(function(){
               console.log($(window).scrollTop());
               $('.map_container').css({position: 'fixed', top: '0px', margintop: '10px', marginbottom: '10px'});
           } else if ($(window).scrollTop() === 0)  {
-              debugger
+              // debugger
               console.log("inside else");
               $('.map_container').css({position: 'relative', top: '24%'});
           }
