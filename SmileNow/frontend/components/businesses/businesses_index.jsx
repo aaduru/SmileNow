@@ -20,6 +20,7 @@ class BusinessesIndex extends React.Component {
     if (this.props.location.pathname !== nextProps.location.pathname && nextProps.location.pathname === '/') {
 
       this.props.fetchBusinesses();
+      this.searchResponse = "";
     }
     this.searchquery = Object.values(nextProps.location.query).join('');
 

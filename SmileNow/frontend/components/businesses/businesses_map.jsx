@@ -6,23 +6,29 @@ class BusinessesMap extends React.Component {
   constructor(props) {
     super(props);
     this._handleMarkerClick = this._handleMarkerClick.bind(this);
+    this.markers = [];
+    this.newMap = this.newMap.bind(this);
   }
 
-  componentDidMount() {
+  newMap(){
     const mapRef = this.refs.businessesMap;
     // const mapCenter = { lat: 37.7758, lng: -122.435 }
     const mapCenter = { lat: 37.759051, lng: -122.446786};
     const options = {
       center: mapCenter,
-      zoom: 12
+      zoom: 11
     };
 
     this.map = new google.maps.Map(mapRef, options);
 
   }
+  componentDidMount() {
+    this.newMap();
+  }
 
   componentWillReceiveProps(nextProps) {
-
+    // debugger
+    this.newMap();
     nextProps.businesses.forEach( business => {
       let lat = business.latitude;
       let lng = business.longitude;
