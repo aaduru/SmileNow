@@ -4,27 +4,31 @@ class Api::BusinessesController < ApplicationController
 
     query_filter_id = params[:filterId]
     query = params[:search]
-    if params[:bounds]
-      @businesses = Bench.in_bounds(bounds)
+
+    if params[:search] && params[:filterId]
+      @businesses = Business.where("name ILIKE ?", "%#{query}%")
+                            .includes(:taggings, :reviews)
+                            .where("taggings.tag_id = ?", query_filter_id)
+                            .references(:tags)
+      # if @businesses.empty?
+      #   render json: ["no records exist for the search query %#{query}% and filter id %#{query_filter_id}"], status: :unprocessable_entity
+      # end
+
+    elsif params[:filterId]
+
+      @businesses = Business.includes(:taggings, :reviews)
+                    .where("taggings.tag_id = ?", query_filter_id)
+                    .references(:tags)
+    elsif params[:search]
+      @businesses = Business.where("name ILIKE ?", "%#{query}%")
+      # if @businesses.empty?
+      #   debugger
+      #   render json: ["no records exist for the search query %#{query}% "], status: :unprocessable_entity
+      # end
     else
-      if params[:search] && params[:filterId]
-        @businesses = Business.where("name ILIKE ?", "%#{query}%")
-                              .includes(:taggings, :reviews)
-                              .where("taggings.tag_id = ?", query_filter_id)
-                              .references(:tags)
-      elsif params[:filterId]
-
-        @businesses = Business.includes(:taggings, :reviews)
-                      .where("taggings.tag_id = ?", query_filter_id)
-                      .references(:tags)
-
-      elsif params[:search]
-
-        @businesses = Business.where("name ILIKE ?", "%#{query}%")
-      else
-        @businesses = Business.all.includes(:taggings, :reviews)
-      end
+      @businesses = Business.all.includes(:taggings, :reviews)
     end
+
     # if params[:filterId]
     #
     #   @businesses = Business.joins(:taggings)

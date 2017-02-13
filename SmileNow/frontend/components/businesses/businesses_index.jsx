@@ -22,25 +22,7 @@ class BusinessesIndex extends React.Component {
     }
   }
 
-  componentWillUpdate(){
 
-    if ((this.props.location.pathname === '/businesses/search') && (Object.keys(this.props.businesses).length === 0)){
-      this.searchquery = (
-            <div>
-              No object found for this search query
-            </div>
-          );
-    }
-    if ((this.props.location.pathname === '/') && (Object.keys(this.props.businesses).length !== 0)){
-
-      this.searchquery = (
-        <div>
-
-        </div>
-      );
-    }
-
-  }
 
   changeMap(id, lat, long, name) {
     this.setState({selected: "selected", businessId: id, lat: lat, long: long, name: name });
@@ -50,17 +32,29 @@ class BusinessesIndex extends React.Component {
     this.setState({selected: null});
   }
 
-  // emptyBusinesses() {
-  //
-  //   if (Object.keys(this.props.businesses).length === 0) {
-  //
-  //     return(
-  //       <div>
-  //         No object found for this search query
-  //       </div>
-  //     );
-  //   }
-  // }
+  renderErrors() {
+    // debugger
+    if (this.props.errors) {
+
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }else {
+      return(
+        <div>
+
+        </div>
+      );
+    }
+  }
+
+
   render(){
     return (
       <div className="index_container">
@@ -68,8 +62,9 @@ class BusinessesIndex extends React.Component {
           <h1 id="main_caption" className="main_caption">Find the Perfect Dental care with SmileNow!</h1>
         </div>
         <div className="container">
+          {this.renderErrors()}
           <div className="index_list_container">
-            {this.searchquery}
+
             <div className="list_index_box">
               <ul>
                 { this.props.businesses.map(businessIndex =>(

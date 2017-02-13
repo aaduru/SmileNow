@@ -2,11 +2,18 @@ import * as APIUtil from '../util/business_api_util';
 
 export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
+// export const RECEIVE_BUSINESS_ERRORS = 'RECEIVE_BUSINESS_ERRORS';
+
+// export const receiveBusinessErrors = errors => ({
+//   type: RECEIVE_BUSINESS_ERRORS,
+//   errors
+// });
 
 // export const fetchBusinesses = () => dispatch => (
 //   APIUtil.fetchBusinesses()
 //     .then(businesses => dispatch(receiveBusinesses(businesses)))
 // );
+
 export const fetchBusinesses = (search, filters) => dispatch => (
   APIUtil.fetchBusinesses(search, filters)
     .then(businesses => dispatch(receiveBusinesses(businesses)))

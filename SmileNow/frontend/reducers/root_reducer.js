@@ -6,6 +6,7 @@ import BusinessesReducer from './businesses_reducer';
 import ReviewsReducer from './reviews_reducer';
 import FiltersReducer from './filters_reducer';
 import ReviewErrorReducer from './review_error_reducer';
+import BusinessErrorReducer from './business_error_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
