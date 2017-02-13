@@ -10,6 +10,7 @@ class BusinessesIndex extends React.Component {
     super(props);
     this.state = {selected: null, businessId: null, lat: null, long: null, name: null};
     this.searchquery;
+    this.searchResponse;
   }
   componentDidMount(){
     this.props.fetchBusinesses();
@@ -20,9 +21,25 @@ class BusinessesIndex extends React.Component {
 
       this.props.fetchBusinesses();
     }
+    this.searchquery = Object.values(nextProps.location.query).join('');
+
+    if (Object.values(nextProps.location.query).join('') !== "" && nextProps.businesses.length === 0){
+      this.searchResponse = "No Results for this search query ";
+
+
+      // return (
+      //   <div>
+      //     No Results for this search query
+      //     {this.searchquery}
+      //   </div>
+      // );
+    } else if (Object.values(nextProps.location.query).join('') !== "" && nextProps.businesses.length !== 0) {
+      this.searchResponse = "";
+      this.searchquery = "";
+    }
+
+
   }
-
-
 
   changeMap(id, lat, long, name) {
     this.setState({selected: "selected", businessId: id, lat: lat, long: long, name: name });
@@ -32,40 +49,42 @@ class BusinessesIndex extends React.Component {
     this.setState({selected: null});
   }
 
-  renderErrors() {
-    // debugger
-    if (this.props.errors) {
+  getBusinesses() {
+    debugger;
+    if (this.props.businesses.length > 0){
 
-      return(
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      );
-    }else {
-      return(
-        <div>
-
-        </div>
-      );
     }
   }
 
 
   render(){
+
+
+    // if (Object.values(this.props.location.query).join('') !== "" && this.props.businesses.length === 0){
+    //   // debugger;
+    //   this.searchquery = Object.values(this.props.location.query).join('');
+      // this.searchResponse = "No Results for this search query";
+    //   // return (
+    //   //   <div>
+    //   //     No Results for this search query
+    //   //     {this.searchquery}
+    //   //   </div>
+    //   // );
+    // }
     return (
       <div className="index_container">
         <div className="caption">
           <h1 id="main_caption" className="main_caption">Find the Perfect Dental care with SmileNow!</h1>
         </div>
         <div className="container">
-          {this.renderErrors()}
+
           <div className="index_list_container">
 
             <div className="list_index_box">
+              <span className="search_response">
+                {this.searchResponse}
+                {this.searchquery}
+              </span>
               <ul>
                 { this.props.businesses.map(businessIndex =>(
                   <li key={businessIndex.id} onMouseEnter={this.changeMap.bind(this, businessIndex.id, businessIndex.latitude, businessIndex.longitude, businessIndex.name)}
@@ -120,8 +139,7 @@ class BusinessesIndex extends React.Component {
                           </div>
                         </div>
                     </div>
-                  </li>))
-                }
+                  </li>))}
               </ul>
             </div>
             <div className="map_container_outer">
