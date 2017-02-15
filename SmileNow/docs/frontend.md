@@ -12,7 +12,7 @@ A post-install script is configured so that webpack bundles all of the frontend 
 
 Webpack conveniently bundles all of the frontend components and Flux parts. The bundled file is located in `/app/assets/javascripts` and included in the main `application.js` file.
 
-## React & Flux
+## React & Redux
 
 All of the React components, Flux action creators, API utilities, dispatcher, and stores are located in the [frontend](../frontend) directory.
 

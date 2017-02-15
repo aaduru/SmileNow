@@ -32,6 +32,8 @@ SmileNow is a single-page application built on Rails and React.js, with many dep
 - [Backend technology][backend]
 - [Frontend technology][frontend]
 
+
+
 [smile]: http://www.smilenow.me/#/login
 [home page]: ./docs/images/home.png "smilenow home page"
 [businesses]: ./docs/images/businesses.png "List of Clinics"

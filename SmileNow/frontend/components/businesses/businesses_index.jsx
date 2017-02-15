@@ -14,6 +14,12 @@ class BusinessesIndex extends React.Component {
   }
   componentDidMount(){
     this.props.fetchBusinesses();
+    this.mapScroll();
+  }
+
+  componentWillUnmount() {
+    // document.documentElement.removeEventListener('scroll', this.mapScroll());
+    $(window).off('scroll', this.scrollTop);
   }
 
   componentWillReceiveProps(nextProps){
@@ -26,19 +32,10 @@ class BusinessesIndex extends React.Component {
 
     if (Object.values(nextProps.location.query).join('') !== "" && nextProps.businesses.length === 0){
       this.searchResponse = "No Results for this search query ";
-
-
-      // return (
-      //   <div>
-      //     No Results for this search query
-      //     {this.searchquery}
-      //   </div>
-      // );
     } else if (Object.values(nextProps.location.query).join('') !== "" && nextProps.businesses.length !== 0) {
       this.searchResponse = "";
       this.searchquery = "";
     }
-
 
   }
 
@@ -50,28 +47,30 @@ class BusinessesIndex extends React.Component {
     this.setState({selected: null});
   }
 
-  getBusinesses() {
-    debugger;
-    if (this.props.businesses.length > 0){
+  mapScroll() {
 
-    }
+    this.scrollTop = function(){
+             // debugger
+       var stickyMapTop = $('.map_container').offset().top;
+       var viewportWidth = $(window).width();
+       var mainTop = $('.main_caption').offset().top;
+       var mainHeight = $('.main_caption').height();
+       var mainBottom = mainTop + mainHeight;
+
+       if($(window).scrollTop() > mainBottom) {
+           $('.map_container').css({position: 'fixed', top: '0px', 'margin-top': '10px', 'margin-bottom': '10px', height: '92%'});
+       } else if ( $(window).scrollTop() <= mainBottom )  {
+           $('.map_container').css({position: 'relative', height: '430px', overflow: 'hidden'});
+       }
+
+     };
+
+     $(window).scroll(this.scrollTop) ;
+
   }
-
 
   render(){
 
-
-    // if (Object.values(this.props.location.query).join('') !== "" && this.props.businesses.length === 0){
-    //   // debugger;
-    //   this.searchquery = Object.values(this.props.location.query).join('');
-      // this.searchResponse = "No Results for this search query";
-    //   // return (
-    //   //   <div>
-    //   //     No Results for this search query
-    //   //     {this.searchquery}
-    //   //   </div>
-    //   // );
-    // }
     return (
       <div className="index_container">
         <div className="caption">
