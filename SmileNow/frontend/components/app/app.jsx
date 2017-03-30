@@ -20,7 +20,10 @@ const App = ({ children }) => (
         </div>
         <br />
         <br />
-        <span className="filter_contents"><FilterFormContainer /></span>
+        <div className="filter_class">
+          <div></div>
+          <span className="filter_contents"><FilterFormContainer /></span>
+        </div>
 
       </div>
     </header>

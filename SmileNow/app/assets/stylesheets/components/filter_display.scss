@@ -11,8 +11,6 @@
 }
 
 
-
-
 .filter_list {
   text-decoration: none;
   padding: 3px;
@@ -32,4 +30,10 @@
   flex-flow: row wrap;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.filter_class {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
 }

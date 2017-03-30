@@ -6,7 +6,12 @@
 
 .filter_item:hover {
   background-color:grey;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 .filter_item {
   cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
