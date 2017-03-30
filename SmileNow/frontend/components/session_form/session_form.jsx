@@ -97,7 +97,7 @@ class SessionForm extends React.Component {
 		return (
 
 				<div className="login-form-container">
-					<h1 className="main_caption">Find the Perfect Dental care with SmileNow!</h1>
+					<h1 className="main_caption">Find the perfect dental care with SmileNow!</h1>
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						<div className="login-form">
 							<h1 className='h1-font'>Welcome to

@@ -19,9 +19,13 @@ h1{
  justify-content: center;*/
  position: relative;
  // background-image: image-url("/assets/login.jpg");
- background-image: url("https://res.cloudinary.com/dzmqqopi9/image/upload/v1484179935/login_ee4k8g.jpg");
- height: 87vh;
+ // background-image: url("https://res.cloudinary.com/dzmqqopi9/image/upload/v1484179935/login_ee4k8g.jpg");
+ // background-image: url("https://res.cloudinary.com/dzmqqopi9/image/upload/v1490074218/smile_awfpre.jpg");
+ background-image: url("https://res.cloudinary.com/dzmqqopi9/image/upload/v1490850661/one_zt8geo.jpg");
+ height: 84vh;
  background-size: cover;
+ background-position: top center;
+ background-repeat: no-repeat;
 }
 
 .login-form {
@@ -85,6 +89,7 @@ hr {
 }
 .login-label {
   font-size: 14px;
+  font-weight: bold;
 }
 .login-form-box {
  /*outline: 1px solid black;*/
@@ -93,7 +98,7 @@ hr {
  justify-content: center;
  align-items: center;*/
  position: absolute;
- top: 14%;
+ top: 10%;
  left: 39%;
  border: 1px solid black;
  padding: 20px;
@@ -115,4 +120,5 @@ hr {
   font-family: 'Pacifico';
   margin: 5px;
   margin-top: 0px;
+  color: #ffec45;
 }

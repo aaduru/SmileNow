@@ -74,7 +74,7 @@ class BusinessesIndex extends React.Component {
     return (
       <div className="index_container">
         <div className="caption">
-          <h1 id="main_caption" className="main_caption">Find the Perfect Dental care with SmileNow!</h1>
+          <h1 id="main_caption" className="main_caption">Find the perfect dental care with SmileNow!</h1>
         </div>
         <div className="container">
 
