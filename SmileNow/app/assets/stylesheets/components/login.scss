@@ -40,7 +40,11 @@ h1{
 .login-input {
  margin-top: 8px;
  font-size: 14px;
+ border-radius: 5px;
+ height:24px;
+ width: 300px;
 }
+
 
 
 hr {
@@ -69,7 +73,34 @@ hr {
  padding: 8px 19px 8px;
  border-radius: 3px;
  width: 131px;
-
+}
+.login-button-submit {
+ background-color: #00ceff;
+ display: inline-block;
+ vertical-align: middle;
+ margin: 0;
+ cursor: pointer;
+ border: 1px solid;
+ font-weight: bold;
+ text-align: center;
+ padding: 8px 19px 8px;
+ border-radius: 3px;
+ width: 131px;
+ margin-right: 20px;
+}
+.login-button-guest {
+ background-color: #00ceff;
+ display: inline-block;
+ vertical-align: middle;
+ margin: 0;
+ cursor: pointer;
+ border: 1px solid;
+ font-weight: bold;
+ text-align: center;
+ padding: 8px 19px 8px;
+ border-radius: 3px;
+ width: 131px;
+ margin-left: 20px;
 }
 
 .submitButton {

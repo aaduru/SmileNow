@@ -46,12 +46,12 @@ class SessionForm extends React.Component {
 
 	navLink() {
 		if (this.state.modalType === "login") {
-			return <div><p>don't have an account</p>
-				<button onClick={this.openModal.bind(this, 'signup')} className="login-button">Sign Up!</button>
+			return <div>Don't have an account
+				<button onClick={this.openModal.bind(this, 'signup')} className="login-button-guest">Sign Up!</button>
 			</div>;
 		} else {
-			return <div><p>have an account already </p>
-				<button onClick={this.openModal.bind(this, 'login')} className="login-button">Log In!</button>
+			return <div> Have an account already
+				<button onClick={this.openModal.bind(this, 'login')} className="login-button-guest">Log In!</button>
 			</div>;
 		}
 	}
@@ -101,41 +101,56 @@ class SessionForm extends React.Component {
 					isOpen={this.state.modalOpen}
 					onRequestClose={this.closeModal}
 					style={ModalStyle}>
-					<h1 className='h1-font'>Welcome to
-						<span className="smile-font"> SmileNow
-							<img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484179941/logo4_fjle77.png" className="logo-image"/>
-						</span>
-					</h1>
-					<br/>
-					Please {this.state.modalType} or {this.navLink()}
+					<div className="login-form">
+						<h1 className='h1-font'>Welcome to
+							<span className="smile-font"> SmileNow
+								<img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484179941/logo4_fjle77.png" className="logo-image"/>
+							</span>
+						</h1>
+						<br/>
+						<div>
+							{this.state.modalType}
+						</div>
+					</div>
 					<form onSubmit={this.handleSubmit}>
-						{this.renderErrors()}
+						<br/>
+						<div className="login-errors">
+							{this.renderErrors()}
+						</div>
 						<div className="login-form">
 							<br/>
-							<label> Username:
+							<label>
 								<input type="text"
 									value={this.state.username}
 									onChange={this.update("username")}
-									className="login-input" />
+									className="login-input"
+									placeholder="Username" />
 							</label>
 							<br/>
-							<label> Password:
+							<label>
 								<input type="password"
 									value={this.state.password}
 									onChange={this.update("password")}
-									className="login-input" />
+									className="login-input"
+									placeholder="Password"/>
 							</label>
 							<br/>
-							<input type="submit" value="Submit" className="login-button" />
-							<br/>
-								<div>
-									<button className="login-button"
-										type="submit"
-										onClick={this.guestLogin}>Guest Login</button>
-								</div>
+							<div>
+
+								<input type="submit" value="Submit" className="login-button-submit" />
+
+								<button className="login-button-guest"
+									type="submit"
+									onClick={this.guestLogin}>Guest Login</button>
+
+							</div>
 						</div>
 
 					</form>
+					<br/>
+					<div className="login-form">
+						{this.navLink()}
+					</div>
 				</Modal>
 			</div>
 		);
