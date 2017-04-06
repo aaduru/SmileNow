@@ -31,10 +31,10 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={BusinessesIndexContainer} onEnter={ _ensureLoggedIn} />
-          <Route path="/businesses/search" component={BusinessesIndexContainer} onEnter={ _ensureLoggedIn} />
-          <Route path="/businesses/filterId" component={BusinessesIndexContainer} onEnter={ _ensureLoggedIn}/>
+          <Route path="/businesses/search" component={BusinessesIndexContainer} onEnter={_ensureLoggedIn} />
+          <Route path="/businesses/filterId" component={BusinessesIndexContainer} onEnter={_ensureLoggedIn}/>
           <Route Path="/businesses/credits" component={Credits} />
-          <Route path="/businesses/:businessId" component={BusinessItemContainer}>
+          <Route path="/businesses/:businessId" component={BusinessItemContainer} onEnter={_ensureLoggedIn}>
             <Route path="/businesses/:businessId/reviews"
               component={ReviewFormContainer} onEnter={_ensureLoggedIn} />
           </Route>
