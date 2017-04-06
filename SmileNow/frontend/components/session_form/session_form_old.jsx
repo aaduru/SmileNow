@@ -98,7 +98,55 @@ class SessionForm extends React.Component {
 
 				<div className="login-form-container">
 					<h1 className="main_caption">Find the perfect dental care with SmileNow!</h1>
-					
+					<form onSubmit={this.handleSubmit} className="login-form-box">
+						<div className="login-form">
+							<h1 className='h1-font'>Welcome to
+								<span className="smile-font"> SmileNow
+									<img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484179941/logo4_fjle77.png" className="logo-image"/>
+								</span>
+							</h1>
+							<br/>
+							<div className="nav-Link">
+								{this.formTypeLink()}
+							</div>
+
+							<div className="login-errors">
+								{this.renderErrors()}
+							</div>
+							<br/>
+							<label className="login-label"> Username:
+								<br/>
+								<input type="text"
+									value={this.state.username}
+									onChange={this.update("username")}
+									className="login-input" />
+							</label>
+							<br/>
+							<label className="login-label"> Password:
+								<br/>
+								<input type="password"
+									value={this.state.password}
+									onChange={this.update("password")}
+									className="login-input" />
+							</label>
+							<br/>
+							<div className="submitButton">
+
+								<input type="submit"
+									value="Submit" className="login-button"/>
+							</div>
+							<br/>
+							<div className="nav-Link">
+								{this.navLink()}
+							</div>
+							<br/>
+							<div>
+								<button className="login-button"
+									type="submit"
+									onClick={this.guestLogin}>Guest Login</button>
+							</div>
+						</div>
+					</form>
 				</div>
 
 		);

@@ -5,7 +5,7 @@ import configureStore from './store/store';
 // import { fetchBusiness, fetchBusinesses } from './actions/business_actions';
 // import { fetchReviews  } from './util/reviews_api_util';
 import { fetchReviews } from './actions/reviews_actions';
-
+import Modal from 'react-modal';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.fetchReviews = fetchReviews;
 
+  Modal.setAppElement(document.body);
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
