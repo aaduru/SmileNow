@@ -7,6 +7,8 @@ class FilterForm extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick(e) {
+    let searchquery= document.getElementById('searchInput').value;
+    console.log(searchquery);
     e.preventDefault();
     const filterId = e.target.id;
     // console.log(e.target.id);
