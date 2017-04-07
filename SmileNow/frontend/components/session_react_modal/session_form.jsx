@@ -92,9 +92,9 @@ class SessionForm extends React.Component {
 		return (
 			<div >
 				<nav className="login-signup">
-					<button onClick={this.openModal.bind(this, 'login')}>Log In!</button>
+					<button onClick={this.openModal.bind(this, 'login')} className="log_out_button" >Log In!</button>
 					&nbsp;or&nbsp;
-					<button onClick={this.openModal.bind(this, 'signup')}>Sign Up!</button>
+					<button onClick={this.openModal.bind(this, 'signup')} className="log_out_button" >Sign Up!</button>
 				</nav>
 				<Modal
 					contentLabel="Modal"
@@ -108,7 +108,7 @@ class SessionForm extends React.Component {
 							</span>
 						</h1>
 						<br/>
-						<div>
+						<div className="modal_type_case">
 							{this.state.modalType}
 						</div>
 					</div>

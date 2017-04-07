@@ -9,7 +9,7 @@ h1{
  font-size: 25px;
 }
 .h1-font{
-  font-family: 'Crete Round';
+  font-family: "Macondo";
 }
 .header_font {
   font-family: 'Pacifico';
@@ -31,6 +31,7 @@ h1{
  align-items: center;
  justify-content: center;
  flex-direction: column;
+ font-family: "Macondo";
 }
 
 .login-errors {
@@ -43,6 +44,8 @@ h1{
  border-radius: 5px;
  height:24px;
  width: 300px;
+ font-family: "Macondo";
+  font-size: 15px;
 }
 
 
@@ -70,9 +73,11 @@ hr {
  border: 1px solid;
  font-weight: bold;
  text-align: center;
- padding: 8px 19px 8px;
+ padding: 6px 19px 6px;
  border-radius: 3px;
  width: 131px;
+ font-family: "Macondo";
+ font-size: 15px;
 }
 .login-button-submit {
  background-color: #00ceff;
@@ -83,10 +88,12 @@ hr {
  border: 1px solid;
  font-weight: bold;
  text-align: center;
- padding: 8px 19px 8px;
+ padding: 6px 19px 6px;
  border-radius: 3px;
  width: 131px;
  margin-right: 20px;
+ font-family: "Macondo";
+  font-size: 15px;
 }
 .login-button-guest {
  background-color: #00ceff;
@@ -97,10 +104,12 @@ hr {
  border: 1px solid;
  font-weight: bold;
  text-align: center;
- padding: 8px 19px 8px;
+ padding: 6px 19px 6px;
  border-radius: 3px;
  width: 131px;
  margin-left: 20px;
+ font-family: "Macondo";
+  font-size: 15px;
 }
 
 .submitButton {
@@ -150,4 +159,8 @@ hr {
   margin: 5px;
   margin-top: 0px;
   color: black;
+}
+
+.modal_type_case{
+   text-transform: uppercase;
 }
