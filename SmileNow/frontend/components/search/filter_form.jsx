@@ -8,20 +8,25 @@ class FilterForm extends React.Component {
   }
   handleClick(e) {
     let searchquery= document.getElementById('searchInput').value;
-    console.log(searchquery);
+  
     e.preventDefault();
     const filterId = e.target.id;
     // console.log(e.target.id);
 
     const query_loc = Object.values(this.props.location.query).join('');
     // console.log(query_loc);
-    if (this.props.location.query){
+    if (searchquery === ""){
+
+      this.props.fetchBusinesses(null, filterId);
+      hashHistory.push({pathname: '/businesses/filterId', query: filterId});
+    }
+    else if (this.props.location.query){
 
       this.props.fetchBusinesses(query_loc, filterId);
       hashHistory.push({pathname: '/businesses/search', query: query_loc});
-
     }
     else {
+
       this.props.fetchBusinesses(null, filterId);
       hashHistory.push({pathname: '/businesses/filterId', query: filterId});
     }

@@ -24,6 +24,7 @@ h1{
  background-size: cover;
  background-position: top center;
  background-repeat: no-repeat;
+
 }
 
 .login-form {
@@ -123,7 +124,7 @@ hr {
 }
 
 .login-form-box:hover{
- background-color: rgba(255,255,255,0.7);
+ background-color: rgba(255,255,255,0.75);
 }
 .login-label {
   font-size: 14px;
@@ -135,17 +136,21 @@ hr {
  display: flex;
  justify-content: center;
  align-items: center;*/
- position: absolute;
- top: 10%;
- left: 39%;
+ position: fixed;
+ top: 74%;
+ left: 25%;
  border: 1px solid black;
- padding: 20px;
+ padding-top: 0px;
+ padding: 10px;
  border-radius: 10px;
- background-color: rgba(255,255,255,0.3);
- min-height: 360px;
+ background-color: rgba(255,255,255,0.5);
+ min-height: 80px;
  min-width: 250px;
- padding-bottom: 25px;
+ padding-bottom: 10px;
  font-family: 'Trirong';
+ // align-items: center;
+ // text-align: center;
+
 }
 .main_caption {
   font-weight: bold;
