@@ -99,12 +99,7 @@ class SessionForm extends React.Component {
 
 				<div className="login-form-container">
 					<h1 className="main_caption">Find the perfect dental care with SmileNow!</h1>
-					<div className="login-form-box">
-						<div className="main_caption">
-							<h1> Log In or Sign Up to view dental clinics near you</h1>
-							<SessionFormContainer />
-						</div>
-					</div>
+			
 				</div>
 
 		);
