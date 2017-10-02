@@ -23,7 +23,8 @@ const App = ({ children }) => (
         <div className="filter_class">
           <div></div>
           <span className="filter_contents"><FilterFormContainer /></span>
-        </div>
+          <div></div>
+      </div>
 
       </div>
     </header>

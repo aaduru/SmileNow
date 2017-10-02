@@ -24,7 +24,7 @@ class Search extends React.Component {
             className="search_input"
             type='text'
             placeholder='Enter the clinic name to search'/>
-      
+
           <button className="search_button">
             <img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484737809/search_p7opzg.png"
               className="search_image" />
