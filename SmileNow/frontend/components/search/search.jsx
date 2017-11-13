@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
+import SessionFormContainer from '../session_react_modal/session_form_container';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.sessionLinks = this.sessionLinks.bind(this);
   }
 
   handleSubmit(e){
@@ -13,6 +15,13 @@ class Search extends React.Component {
     this.props.fetchBusinesses(searchquery, null);
     hashHistory.push({pathname: '/businesses/search', query: searchquery});
         // hashHistory.push({pathname: `/businesses/search?search=${searchquery}`});
+
+  }
+
+  sessionLinks() {
+    return(
+      <SessionFormContainer />
+    );
   }
 
   render (){
@@ -29,7 +38,7 @@ class Search extends React.Component {
             <img src="https://res.cloudinary.com/dzmqqopi9/image/upload/v1484737809/search_p7opzg.png"
               className="search_image" />
           </button>
-
+          
         </form>
       </div>
     );
